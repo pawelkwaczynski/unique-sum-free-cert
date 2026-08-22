@@ -16,7 +16,7 @@ for every k below m(p), not only for k = m(p) - 1.
 
 | p | m(p) | witness | lower bound k = 2 .. m(p)-1 | status |
 |---|---|---|---|---|
-| 53 | 14 | `witnesses/` | k = 13 solver-certified, hash-bound (6,020 cubes); k <= 12 in progress | partial |
+| 53 | 14 | `witnesses/` | every k = 2..13 refuted, each rung audited (`ledgers/p53/`) | solver-certified, hash-bound |
 | 59 | 15 | `witnesses/` | queued | search only |
 | 61 | 15 | `witnesses/` | queued | search only |
 | 67 | 16 | `witnesses/` | k = 15 in progress on cloud workers | search only |
@@ -62,7 +62,7 @@ unique-sums-notes, so a claim means the same thing in both tables.
   deleted and only its sha256, together with the sha256 of the exact CNF, is
   kept in the ledger. The coverage auditor rebuilds each CNF from `gen_cnf.py`
   plus the cube's unit clauses and refuses any row whose hash does not match.
-  p = 53, k = 13 is at this tier. From here on the LRAT files are retained.
+  p = 53 is at this tier for every k from 2 to 13. From here on the LRAT files are retained.
 - **search only**: two independent programs agree, witness checked. No proof
   object.
 
