@@ -119,7 +119,11 @@ def build(p, k, sumset_bound=True, reflection_break=True):
                 clauses.append([-eq_prev, -xr, xs])
                 eq = next_var
                 next_var += 1
-                clauses.append([-eq, -eq_prev])
+                # eq <-> eq_prev and (x_r == x_s). An earlier version had
+                # [-eq, -eq_prev] here, which excluded every assignment whose
+                # first two orbit pairs are both equal; found 2026-08-23 when
+                # k = p came out UNSAT although the whole group is USF.
+                clauses.append([-eq, eq_prev])
                 clauses.append([-eq, -xr, xs])
                 clauses.append([-eq, xr, -xs])
                 clauses.append([eq, -eq_prev, xr, xs])
