@@ -16,3 +16,12 @@ faithful at p = 67. It does rule out a shared misreading of the definition,
 since the two encoders were written independently and differ in structure
 (this one adds a sumset bound and a reflection symmetry breaker; the other does
 not).
+
+## Per-cube replay
+
+`replay_cubes.py` takes a seeded random sample of our certified p = 53, k = 13
+cubes, applies their unit clauses to the other encoder's CNF (same variable
+convention) and solves with kissat. Result (2026-08-23, seed 2026): 300 of 300
+cubes UNSAT on the other encoder, zero mismatches (`replay_p53k13.json`). This
+checks that the two encodings agree not only on whole instances but on every
+sampled sub-instance of the partition actually used for the certificates.

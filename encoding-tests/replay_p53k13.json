@@ -1,0 +1,1809 @@
+{
+"p": 53,
+"k": 13,
+"sample": 300,
+"seed": 2026,
+"mismatches": 0,
+"rows": [
+{
+"cube": "c4_d9_e17",
+"other_verdict": "UNSAT",
+"other_seconds": 36.28,
+"ours_solve_s": 3.62
+},
+{
+"cube": "c8_d17_e29",
+"other_verdict": "UNSAT",
+"other_seconds": 0.03,
+"ours_solve_s": 0.03
+},
+{
+"cube": "c12_d17_e42",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.0
+},
+{
+"cube": "c4_d5_e26",
+"other_verdict": "UNSAT",
+"other_seconds": 0.03,
+"ours_solve_s": 0.03
+},
+{
+"cube": "c7_d11_e22",
+"other_verdict": "UNSAT",
+"other_seconds": 4.15,
+"ours_solve_s": 0.73
+},
+{
+"cube": "c14_d34",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c2_d9_e43",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c3_d6_e43",
+"other_verdict": "UNSAT",
+"other_seconds": 1.73,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c4_d8_e45",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c11_d13_e38",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c5_d18_e48",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c13_d18_e26",
+"other_verdict": "UNSAT",
+"other_seconds": 0.11,
+"ours_solve_s": 0.15
+},
+{
+"cube": "c8_d19",
+"other_verdict": "UNSAT",
+"other_seconds": 24.32,
+"ours_solve_s": 4.6
+},
+{
+"cube": "c5_d7_e41",
+"other_verdict": "UNSAT",
+"other_seconds": 1.74,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c4_d8_e30",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c9_d18_e39",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c15_d41",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c30_d42",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c7_d13_e16",
+"other_verdict": "UNSAT",
+"other_seconds": 46.46,
+"ours_solve_s": 5.07
+},
+{
+"cube": "c5_d16_e31",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.03
+},
+{
+"cube": "c3_d4_e30",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c12_d15_e39",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c3_d7_e21",
+"other_verdict": "UNSAT",
+"other_seconds": 5.9,
+"ours_solve_s": 0.48
+},
+{
+"cube": "c30_d41",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c12_d13_e17",
+"other_verdict": "UNSAT",
+"other_seconds": 18.25,
+"ours_solve_s": 3.3
+},
+{
+"cube": "c7_d22",
+"other_verdict": "UNSAT",
+"other_seconds": 2.0,
+"ours_solve_s": 0.41
+},
+{
+"cube": "c7_d16_e43",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c8_d18_e31",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.03
+},
+{
+"cube": "c14_d17_e43",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c12_d14_e35",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c8_d10_e17",
+"other_verdict": "UNSAT",
+"other_seconds": 28.31,
+"ours_solve_s": 3.69
+},
+{
+"cube": "c11_d18_e36",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c10_d11_e46",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c9_d15_e49",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c27_d50",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c10_d16_e22",
+"other_verdict": "UNSAT",
+"other_seconds": 5.88,
+"ours_solve_s": 0.58
+},
+{
+"cube": "c44_d52",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c7_d17_e35",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c5_d11_e44",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c6_d11_e40",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c8_d10_e19",
+"other_verdict": "UNSAT",
+"other_seconds": 16.05,
+"ours_solve_s": 1.93
+},
+{
+"cube": "c3_d8_e20",
+"other_verdict": "UNSAT",
+"other_seconds": 6.29,
+"ours_solve_s": 0.78
+},
+{
+"cube": "c5_d14_e22",
+"other_verdict": "UNSAT",
+"other_seconds": 6.01,
+"ours_solve_s": 0.8
+},
+{
+"cube": "c8_d10_e31",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.03
+},
+{
+"cube": "c3_d9_e14",
+"other_verdict": "UNSAT",
+"other_seconds": 90.63,
+"ours_solve_s": 3.39
+},
+{
+"cube": "c4_d13_e45",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c37_d45",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c5_d18_e20",
+"other_verdict": "UNSAT",
+"other_seconds": 6.02,
+"ours_solve_s": 1.92
+},
+{
+"cube": "c4_d10_e20",
+"other_verdict": "UNSAT",
+"other_seconds": 8.16,
+"ours_solve_s": 1.42
+},
+{
+"cube": "c6_d14_e41",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c9_d14_e26",
+"other_verdict": "UNSAT",
+"other_seconds": 1.81,
+"ours_solve_s": 0.15
+},
+{
+"cube": "c3_d15_e48",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.02
+},
+{
+"cube": "c4_d15_e44",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c13_d15_e18",
+"other_verdict": "UNSAT",
+"other_seconds": 16.2,
+"ours_solve_s": 2.52
+},
+{
+"cube": "c11_d28",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.02
+},
+{
+"cube": "c19_d46",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c13_d16_e18",
+"other_verdict": "UNSAT",
+"other_seconds": 16.18,
+"ours_solve_s": 2.4
+},
+{
+"cube": "c4_d8_e31",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c6_d7_e27",
+"other_verdict": "UNSAT",
+"other_seconds": 0.03,
+"ours_solve_s": 0.04
+},
+{
+"cube": "c10_d11_e14",
+"other_verdict": "UNSAT",
+"other_seconds": 74.55,
+"ours_solve_s": 7.35
+},
+{
+"cube": "c13_d24",
+"other_verdict": "UNSAT",
+"other_seconds": 1.9,
+"ours_solve_s": 0.13
+},
+{
+"cube": "c13_d23",
+"other_verdict": "UNSAT",
+"other_seconds": 1.99,
+"ours_solve_s": 0.37
+},
+{
+"cube": "c4_d5_e33",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c13_d14_e41",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c36_d52",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c3_d6_e42",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c9_d13_e44",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c4_d6_e19",
+"other_verdict": "UNSAT",
+"other_seconds": 8.07,
+"ours_solve_s": 1.58
+},
+{
+"cube": "c18_d30",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c5_d14_e35",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c14_d15_e38",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c6_d9_e19",
+"other_verdict": "UNSAT",
+"other_seconds": 16.18,
+"ours_solve_s": 1.83
+},
+{
+"cube": "c13_d17_e45",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c6_d13_e36",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c2_d12_e28",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.03
+},
+{
+"cube": "c5_d6_e32",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c2_d12_e13",
+"other_verdict": "UNSAT",
+"other_seconds": 56.46,
+"ours_solve_s": 1.75
+},
+{
+"cube": "c5_d12_e16",
+"other_verdict": "UNSAT",
+"other_seconds": 40.17,
+"ours_solve_s": 3.9
+},
+{
+"cube": "c8_d13_e47",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c7_d17_e21",
+"other_verdict": "UNSAT",
+"other_seconds": 6.15,
+"ours_solve_s": 0.97
+},
+{
+"cube": "c9_d18_e25",
+"other_verdict": "UNSAT",
+"other_seconds": 0.11,
+"ours_solve_s": 0.19
+},
+{
+"cube": "c9_d14_e47",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c3_d21",
+"other_verdict": "UNSAT",
+"other_seconds": 1.98,
+"ours_solve_s": 0.3
+},
+{
+"cube": "c4_d14_e24",
+"other_verdict": "UNSAT",
+"other_seconds": 1.9,
+"ours_solve_s": 0.28
+},
+{
+"cube": "c7_d13_e34",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c9_d26",
+"other_verdict": "UNSAT",
+"other_seconds": 0.04,
+"ours_solve_s": 0.05
+},
+{
+"cube": "c8_d14_e27",
+"other_verdict": "UNSAT",
+"other_seconds": 0.04,
+"ours_solve_s": 0.05
+},
+{
+"cube": "c13_d41",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.0
+},
+{
+"cube": "c6_d8_e44",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c4_d10_e35",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c14_d16_e20",
+"other_verdict": "UNSAT",
+"other_seconds": 7.89,
+"ours_solve_s": 1.55
+},
+{
+"cube": "c4_d15_e22",
+"other_verdict": "UNSAT",
+"other_seconds": 2.2,
+"ours_solve_s": 0.63
+},
+{
+"cube": "c9_d17_e47",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c7_d46",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c30_d43",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c9_d17_e43",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c9_d11_e44",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c8_d12_e27",
+"other_verdict": "UNSAT",
+"other_seconds": 1.77,
+"ours_solve_s": 0.05
+},
+{
+"cube": "c7_d15_e48",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c5_d8_e15",
+"other_verdict": "UNSAT",
+"other_seconds": 68.66,
+"ours_solve_s": 5.36
+},
+{
+"cube": "c10_d18_e43",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c3_d16_e19",
+"other_verdict": "UNSAT",
+"other_seconds": 8.14,
+"ours_solve_s": 1.16
+},
+{
+"cube": "c4_d15_e45",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c12_d15_e35",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c31_d38",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c7_d12_e43",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c12_d18_e42",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c26_d47",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.02
+},
+{
+"cube": "c7_d14_e51",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c17_d18",
+"other_verdict": "UNSAT",
+"other_seconds": 14.16,
+"ours_solve_s": 1.41
+},
+{
+"cube": "c10_d50",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c12_d15_e22",
+"other_verdict": "UNSAT",
+"other_seconds": 5.89,
+"ours_solve_s": 0.8
+},
+{
+"cube": "c6_d14_e50",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c2_d7_e50",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c14_d16_e31",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.03
+},
+{
+"cube": "c23_d31",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.0
+},
+{
+"cube": "c8_d13_e24",
+"other_verdict": "UNSAT",
+"other_seconds": 1.95,
+"ours_solve_s": 0.36
+},
+{
+"cube": "c5_d10_e41",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c7_d15_e31",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.02
+},
+{
+"cube": "c4_d17_e40",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c7_d10_e35",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c8_d17_e40",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c9_d12_e27",
+"other_verdict": "UNSAT",
+"other_seconds": 0.04,
+"ours_solve_s": 0.05
+},
+{
+"cube": "c10_d14_e32",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.02
+},
+{
+"cube": "c4_d5_e24",
+"other_verdict": "UNSAT",
+"other_seconds": 0.09,
+"ours_solve_s": 0.11
+},
+{
+"cube": "c28_d38",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c7_d14_e16",
+"other_verdict": "UNSAT",
+"other_seconds": 46.35,
+"ours_solve_s": 5.7
+},
+{
+"cube": "c2_d11_e20",
+"other_verdict": "UNSAT",
+"other_seconds": 7.95,
+"ours_solve_s": 0.3
+},
+{
+"cube": "c11_d17_e36",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c10_d11_e47",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c5_d17_e40",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c26_d37",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.02
+},
+{
+"cube": "c3_d14_e47",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c8_d11_e41",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c10_d14_e42",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c10_d18_e23",
+"other_verdict": "UNSAT",
+"other_seconds": 2.17,
+"ours_solve_s": 0.51
+},
+{
+"cube": "c3_d7_e31",
+"other_verdict": "UNSAT",
+"other_seconds": 1.74,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c21_d24",
+"other_verdict": "UNSAT",
+"other_seconds": 0.09,
+"ours_solve_s": 0.05
+},
+{
+"cube": "c4_d8_e49",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c3_d5_e42",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c7_d12_e44",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c6_d7_e10",
+"other_verdict": "UNSAT",
+"other_seconds": 233.89,
+"ours_solve_s": 17.85
+},
+{
+"cube": "c2_d11_e37",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c3_d5_e16",
+"other_verdict": "UNSAT",
+"other_seconds": 24.14,
+"ours_solve_s": 2.82
+},
+{
+"cube": "c10_d43",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.0
+},
+{
+"cube": "c2_d11_e42",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c11_d18_e50",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c2_d4_e11",
+"other_verdict": "UNSAT",
+"other_seconds": 171.48,
+"ours_solve_s": 2.15
+},
+{
+"cube": "c9_d16_e41",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c4_d10_e11",
+"other_verdict": "UNSAT",
+"other_seconds": 237.94,
+"ours_solve_s": 16.59
+},
+{
+"cube": "c8_d13_e49",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c10_d11_e43",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.0
+},
+{
+"cube": "c3_d15_e32",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c2_d10_e32",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.02
+},
+{
+"cube": "c7_d8_e19",
+"other_verdict": "UNSAT",
+"other_seconds": 13.92,
+"ours_solve_s": 2.34
+},
+{
+"cube": "c8_d9_e41",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c11_d18_e32",
+"other_verdict": "UNSAT",
+"other_seconds": 0.03,
+"ours_solve_s": 0.03
+},
+{
+"cube": "c15_d34",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c7_d13_e39",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c5_d12_e17",
+"other_verdict": "UNSAT",
+"other_seconds": 34.43,
+"ours_solve_s": 3.33
+},
+{
+"cube": "c2_d8_e46",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c11_d16_e26",
+"other_verdict": "UNSAT",
+"other_seconds": 1.84,
+"ours_solve_s": 0.14
+},
+{
+"cube": "c4_d14_e42",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c6_d14_e42",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c4_d11_e51",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c10_d13_e49",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c4_d17_e20",
+"other_verdict": "UNSAT",
+"other_seconds": 8.02,
+"ours_solve_s": 0.7
+},
+{
+"cube": "c45_d47",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c2_d7_e35",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c3_d13_e42",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c47_d51",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c7_d16_e45",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c9_d14_e21",
+"other_verdict": "UNSAT",
+"other_seconds": 10.16,
+"ours_solve_s": 1.08
+},
+{
+"cube": "c8_d17_e20",
+"other_verdict": "UNSAT",
+"other_seconds": 10.13,
+"ours_solve_s": 1.72
+},
+{
+"cube": "c4_d27",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.03
+},
+{
+"cube": "c11_d12_e33",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c7_d8_e43",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c9_d14_e38",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c5_d13_e21",
+"other_verdict": "UNSAT",
+"other_seconds": 8.1,
+"ours_solve_s": 0.85
+},
+{
+"cube": "c22_d43",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c9_d25",
+"other_verdict": "UNSAT",
+"other_seconds": 1.84,
+"ours_solve_s": 0.07
+},
+{
+"cube": "c13_d15_e16",
+"other_verdict": "UNSAT",
+"other_seconds": 18.34,
+"ours_solve_s": 4.51
+},
+{
+"cube": "c3_d12_e17",
+"other_verdict": "UNSAT",
+"other_seconds": 28.14,
+"ours_solve_s": 1.91
+},
+{
+"cube": "c6_d11_e16",
+"other_verdict": "UNSAT",
+"other_seconds": 48.25,
+"ours_solve_s": 4.15
+},
+{
+"cube": "c4_d9_e18",
+"other_verdict": "UNSAT",
+"other_seconds": 20.25,
+"ours_solve_s": 2.84
+},
+{
+"cube": "c7_d14_e28",
+"other_verdict": "UNSAT",
+"other_seconds": 0.03,
+"ours_solve_s": 0.04
+},
+{
+"cube": "c7_d17_e27",
+"other_verdict": "UNSAT",
+"other_seconds": 0.04,
+"ours_solve_s": 0.05
+},
+{
+"cube": "c9_d18_e48",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c41_d43",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.0
+},
+{
+"cube": "c3_d11_e44",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c2_d9_e28",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.03
+},
+{
+"cube": "c10_d16_e50",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c34_d39",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c10_d16_e35",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c13_d17_e30",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.03
+},
+{
+"cube": "c7_d8_e29",
+"other_verdict": "UNSAT",
+"other_seconds": 1.76,
+"ours_solve_s": 0.03
+},
+{
+"cube": "c5_d24",
+"other_verdict": "UNSAT",
+"other_seconds": 0.11,
+"ours_solve_s": 0.07
+},
+{
+"cube": "c7_d15_e36",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c20_d45",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c4_d12_e23",
+"other_verdict": "UNSAT",
+"other_seconds": 2.04,
+"ours_solve_s": 0.39
+},
+{
+"cube": "c17_d40",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c9_d16_e25",
+"other_verdict": "UNSAT",
+"other_seconds": 1.87,
+"ours_solve_s": 0.16
+},
+{
+"cube": "c12_d13_e36",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c8_d14_e32",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c10_d38",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c6_d7_e51",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c25_d47",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c7_d9_e10",
+"other_verdict": "UNSAT",
+"other_seconds": 260.11,
+"ours_solve_s": 21.05
+},
+{
+"cube": "c22_d52",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c5_d7_e43",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c7_d13_e37",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c3_d13_e32",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c2_d4_e14",
+"other_verdict": "UNSAT",
+"other_seconds": 58.43,
+"ours_solve_s": 1.28
+},
+{
+"cube": "c3_d7_e12",
+"other_verdict": "UNSAT",
+"other_seconds": 209.65,
+"ours_solve_s": 7.8
+},
+{
+"cube": "c11_d12_e42",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c2_d7_e31",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c6_d14_e37",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c8_d14_e48",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c8_d12_e22",
+"other_verdict": "UNSAT",
+"other_seconds": 5.98,
+"ours_solve_s": 0.65
+},
+{
+"cube": "c9_d17_e52",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c11_d14_e15",
+"other_verdict": "UNSAT",
+"other_seconds": 38.53,
+"ours_solve_s": 6.52
+},
+{
+"cube": "c4_d15_e40",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c17_d30",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.02
+},
+{
+"cube": "c14_d17_e42",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c3_d11_e41",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c14_d17_e46",
+"other_verdict": "UNSAT",
+"other_seconds": 1.74,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c7_d12_e29",
+"other_verdict": "UNSAT",
+"other_seconds": 0.04,
+"ours_solve_s": 0.03
+},
+{
+"cube": "c10_d51",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.0
+},
+{
+"cube": "c10_d15_e27",
+"other_verdict": "UNSAT",
+"other_seconds": 0.08,
+"ours_solve_s": 0.07
+},
+{
+"cube": "c9_d16_e43",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c3_d4_e21",
+"other_verdict": "UNSAT",
+"other_seconds": 2.01,
+"ours_solve_s": 0.38
+},
+{
+"cube": "c21_d28",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.02
+},
+{
+"cube": "c7_d18_e38",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c19_d32",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c5_d9_e28",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.03
+},
+{
+"cube": "c4_d5_e50",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c4_d9_e25",
+"other_verdict": "UNSAT",
+"other_seconds": 0.1,
+"ours_solve_s": 0.14
+},
+{
+"cube": "c2_d4_e26",
+"other_verdict": "UNSAT",
+"other_seconds": 1.78,
+"ours_solve_s": 0.03
+},
+{
+"cube": "c30_d44",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c2_d11_e45",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c3_d15_e30",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.02
+},
+{
+"cube": "c3_d15_e42",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.02
+},
+{
+"cube": "c11_d18_e49",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c4_d8_e27",
+"other_verdict": "UNSAT",
+"other_seconds": 0.03,
+"ours_solve_s": 0.04
+},
+{
+"cube": "c8_d13_e28",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.04
+},
+{
+"cube": "c5_d10_e42",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c12_d17_e50",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c3_d6_e30",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c5_d10_e33",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c22_d48",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c29_d33",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c11_d14_e40",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c9_d12_e28",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.03
+},
+{
+"cube": "c2_d9_e48",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c11_d15_e22",
+"other_verdict": "UNSAT",
+"other_seconds": 5.95,
+"ours_solve_s": 0.91
+},
+{
+"cube": "c5_d8_e26",
+"other_verdict": "UNSAT",
+"other_seconds": 0.03,
+"ours_solve_s": 0.06
+},
+{
+"cube": "c6_d12_e51",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c8_d12_e50",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c14_d18_e25",
+"other_verdict": "UNSAT",
+"other_seconds": 0.1,
+"ours_solve_s": 0.2
+},
+{
+"cube": "c6_d15_e20",
+"other_verdict": "UNSAT",
+"other_seconds": 11.87,
+"ours_solve_s": 1.44
+},
+{
+"cube": "c8_d14_e29",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.03
+},
+{
+"cube": "c2_d11_e31",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c3_d15_e35",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c10_d12_e46",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c3_d6_e45",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c3_d7_e23",
+"other_verdict": "UNSAT",
+"other_seconds": 0.2,
+"ours_solve_s": 0.18
+},
+{
+"cube": "c6_d49",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c5_d16_e21",
+"other_verdict": "UNSAT",
+"other_seconds": 7.82,
+"ours_solve_s": 1.02
+},
+{
+"cube": "c4_d45",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.0
+},
+{
+"cube": "c13_d17_e33",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c9_d10_e19",
+"other_verdict": "UNSAT",
+"other_seconds": 12.17,
+"ours_solve_s": 2.18
+},
+{
+"cube": "c5_d12_e33",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c10_d14_e17",
+"other_verdict": "UNSAT",
+"other_seconds": 32.16,
+"ours_solve_s": 3.41
+},
+{
+"cube": "c2_d7_e33",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c4_d7_e50",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c5_d25",
+"other_verdict": "UNSAT",
+"other_seconds": 0.04,
+"ours_solve_s": 0.04
+},
+{
+"cube": "c3_d12_e21",
+"other_verdict": "UNSAT",
+"other_seconds": 6.08,
+"ours_solve_s": 0.56
+},
+{
+"cube": "c46_d50",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c6_d8_e51",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c13_d18_e30",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.03
+},
+{
+"cube": "c2_d12_e44",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c8_d12_e16",
+"other_verdict": "UNSAT",
+"other_seconds": 54.45,
+"ours_solve_s": 4.82
+},
+{
+"cube": "c15_d23",
+"other_verdict": "UNSAT",
+"other_seconds": 2.04,
+"ours_solve_s": 0.36
+},
+{
+"cube": "c4_d5_e9",
+"other_verdict": "UNSAT",
+"other_seconds": 290.32,
+"ours_solve_s": 33.31
+},
+{
+"cube": "c5_d10_e13",
+"other_verdict": "UNSAT",
+"other_seconds": 141.01,
+"ours_solve_s": 9.04
+},
+{
+"cube": "c2_d5_e42",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c9_d12_e29",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.03
+},
+{
+"cube": "c9_d21",
+"other_verdict": "UNSAT",
+"other_seconds": 6.07,
+"ours_solve_s": 1.96
+},
+{
+"cube": "c4_d16_e31",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.03
+},
+{
+"cube": "c2_d13_e23",
+"other_verdict": "UNSAT",
+"other_seconds": 2.07,
+"ours_solve_s": 0.14
+},
+{
+"cube": "c5_d8_e40",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c3_d8_e23",
+"other_verdict": "UNSAT",
+"other_seconds": 2.0,
+"ours_solve_s": 0.22
+},
+{
+"cube": "c10_d17_e48",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c4_d5_e44",
+"other_verdict": "UNSAT",
+"other_seconds": 0.0,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c13_d14_e22",
+"other_verdict": "UNSAT",
+"other_seconds": 4.0,
+"ours_solve_s": 0.67
+},
+{
+"cube": "c12_d22",
+"other_verdict": "UNSAT",
+"other_seconds": 3.98,
+"ours_solve_s": 0.62
+},
+{
+"cube": "c8_d10_e39",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c7_d41",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.0
+},
+{
+"cube": "c6_d7_e52",
+"other_verdict": "UNSAT",
+"other_seconds": 0.01,
+"ours_solve_s": 0.01
+},
+{
+"cube": "c11_d13_e29",
+"other_verdict": "UNSAT",
+"other_seconds": 0.02,
+"ours_solve_s": 0.03
+}
+]
+}
