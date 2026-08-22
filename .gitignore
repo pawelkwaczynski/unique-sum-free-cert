@@ -1,0 +1,10 @@
+tools/drat-trim/
+tools/cake_lpr/
+encoding-tests/usf_encode_pinned.py
+*.cnf
+*.drat
+*.lrat
+*.zst
+work/
+__pycache__/
+.DS_Store
