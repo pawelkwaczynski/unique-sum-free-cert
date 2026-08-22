@@ -1,0 +1,14 @@
+{
+ "p": 53,
+ "k": 13,
+ "cubes_recorded": 6020,
+ "verdicts": {
+  "UNSAT": 6020
+ },
+ "drat_trim_verified": 6020,
+ "cake_lpr_verified": 6020,
+ "encoder_sha256": "45185c45aa387893cb796c121e7c0db9d2ca9a1f828f05882f1dd3ba2640001c",
+ "base_cnf_sha256": "6cc7a002099ece1e8da28aa6f6004b74e93150f8325a0e7ec7b1b2bfcc275714",
+ "solve_cpu_hours": 1.49,
+ "verify_cpu_hours": 2.86
+}
