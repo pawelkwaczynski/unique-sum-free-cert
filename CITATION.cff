@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use these certificates or witnesses, please cite them as below."
+title: "unique-sum-free-cert: machine-checked certificates for m(p) (OEIS A398173)"
+authors:
+  - family-names: Kwaczyński
+    given-names: Paweł
+    orcid: "https://orcid.org/0009-0004-0627-3621"
+    city: Łódź
+    country: PL
+type: software
+license: MIT
+repository-code: "https://github.com/pawelkwaczynski/unique-sum-free-cert"
+date-released: 2026-08-23
+version: 0.1.0
