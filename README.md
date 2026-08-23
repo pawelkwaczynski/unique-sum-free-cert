@@ -12,6 +12,14 @@ allowed). m(p) is the minimum |A|. The function is not monotone in |A|, so an
 exact value needs two separate things: a witness of size m(p), and a refutation
 for every k below m(p), not only for k = m(p) - 1.
 
+## Re-issue notice (2026-08-23)
+
+The first issue of the p = 53 ledgers was produced with a symmetry breaker that
+excluded part of the search space (one wrong sign in the lex-leader chain,
+details in `encoding-tests/README.md`). Those files are kept under
+`ledgers/p53/superseded/` and are not certificates. Everything under
+`ledgers/p53/k*/` was recomputed with the fixed encoder and audited again.
+
 ## Values
 
 | p | m(p) | witness | lower bound k = 2 .. m(p)-1 | status |

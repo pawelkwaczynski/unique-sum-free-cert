@@ -10,5 +10,5 @@
  "encoder_sha256": "5bec02f0d5e634c247d2140eb37f6a659f5dc980ec1eb9bc658e3c6822d70932",
  "base_cnf_sha256": "6a6165e9db2e808af7941d67fed0cc828ebb5cd50c02a4fd133960f04d95b898",
  "solve_cpu_hours": 0.01,
- "verify_cpu_hours": 0.18
+ "verify_cpu_hours": 0.09
 }

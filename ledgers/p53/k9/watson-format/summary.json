@@ -9,6 +9,6 @@
  "cake_lpr_verified": 1275,
  "encoder_sha256": "5bec02f0d5e634c247d2140eb37f6a659f5dc980ec1eb9bc658e3c6822d70932",
  "base_cnf_sha256": "78840d3cd8389e0c84de32b805f66e111280731b81e047407640cd41074ece52",
- "solve_cpu_hours": 0.02,
- "verify_cpu_hours": 0.21
+ "solve_cpu_hours": 0.01,
+ "verify_cpu_hours": 0.09
 }
