@@ -26,7 +26,7 @@ jobs:
           set -e
           for d in ledgers/p*/k*; do
             p=$(basename $(dirname $d) | tr -d p); k=$(basename $d | tr -d k)
-            [ -f $d/cover.jsonl ] && python3 check_cover.py $p $k $d/certified.jsonl $d/cover.jsonl
+            if [ -f $d/cover.jsonl ]; then python3 check_cover.py $p $k $d/certified.jsonl $d/cover.jsonl; else echo "no cover ledger for p=$p k=$k"; exit 1; fi
           done
       - name: exported summaries agree with the ledgers
         run: |
