@@ -87,8 +87,9 @@ longer exists; for later ledgers the retained LRAT will be deposited with a DOI.
 - `gen_cnf.py`: the SAT encoding (membership of i on variable i+1, pair
   variables, Sinz counters for |A| = k, WLOG 0 and 1 in A, a sumset bound and
   a reflection symmetry breaker).
-- `cubes.py`: cube tags, their unit clauses, and the exact CNF serialization
-  the hashes are computed over.
+- `cubes.py`: cube tags (position cubes: the 3rd, 4th, 5th smallest elements of
+  A, every residue between them excluded), their unit clauses, and the exact
+  CNF serialization the hashes are computed over.
 - `audit_coverage.py`: fail-closed coverage and hash-binding audit of a ledger.
 - `verify_drat.sh`: drat-trim then cake_lpr on one CNF/DRAT pair.
 - `export_ledger.py`: export to the Watson row layout.

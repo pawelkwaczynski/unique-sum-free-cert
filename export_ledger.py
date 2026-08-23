@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import gen_cnf
 from cubes import serialize_cnf
 
-CUBER = "orbit-canonical (c,d,e = 3rd/4th/5th element of A, lex-min under affine maps)"
+CUBER = "position cubes: c, d, e = 3rd, 4th, 5th smallest element of A after fixing 0, 1 in A; residues between fixed elements excluded"
 
 
 def main():

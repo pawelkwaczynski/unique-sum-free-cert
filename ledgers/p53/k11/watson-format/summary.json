@@ -7,8 +7,8 @@
  },
  "drat_trim_verified": 1275,
  "cake_lpr_verified": 1275,
- "encoder_sha256": "45185c45aa387893cb796c121e7c0db9d2ca9a1f828f05882f1dd3ba2640001c",
- "base_cnf_sha256": "21fbd2acc11d4ad3db23795b4ff6b3b1621d026cf5422387bd5bbd90ad6b111b",
+ "encoder_sha256": "5bec02f0d5e634c247d2140eb37f6a659f5dc980ec1eb9bc658e3c6822d70932",
+ "base_cnf_sha256": "1c62ed6e8cfc034e5cb15e8a205d43127c98f9c5c7eacfa82cb3cfa6e8acdf73",
  "solve_cpu_hours": 0.13,
  "verify_cpu_hours": 0.36
 }
