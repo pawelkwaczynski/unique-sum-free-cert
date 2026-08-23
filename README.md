@@ -78,6 +78,11 @@ Trusted surfaces that nothing here certifies: that `gen_cnf.py` encodes the
 definition faithfully (see `encoding-tests/` for what has been tested), the
 checkers themselves, and the coverage argument in `audit_coverage.py`.
 
+## Claims and threats
+
+`VERIFICATION_MAP.md` lists every claim with its tier and status history;
+`THREAT_MODEL.md` lists the ways this could be wrong and what catches each.
+
 ## Reproduce
 
 ```
