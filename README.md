@@ -99,6 +99,11 @@ longer exists; for later ledgers the retained LRAT will be deposited with a DOI.
   A, every residue between them excluded), their unit clauses, and the exact
   CNF serialization the hashes are computed over.
 - `audit_coverage.py`: fail-closed coverage and hash-binding audit of a ledger.
+- `cover_cert.py`, `check_cover.py`: the completeness of the cube partition
+  itself as a checked certificate (the formula "0, 1 in A, |A| = k, no cube"
+  refuted by kissat, checked by drat-trim and cake_lpr; one certificate for the
+  top level and one per split cube), after Szeider's LRAT-Catcher construction,
+  so Proposition 2 is not only a hand proof; `ledgers/p*/k*/cover.jsonl`.
 - `verify_drat.sh`: drat-trim then cake_lpr on one CNF/DRAT pair.
 - `export_ledger.py`: export to the Watson row layout.
 - `ledgers/p<p>/k<k>/`: one ledger per (p, k), plus the exported layout.

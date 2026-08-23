@@ -21,12 +21,19 @@ jobs:
             echo "== p=$p k=$k"
             python3 audit_coverage.py $p $k $d/certified.jsonl
           done
+      - name: cover certificates are bound to the reconstructed cover formulas
+        run: |
+          set -e
+          for d in ledgers/p*/k*; do
+            p=$(basename $(dirname $d) | tr -d p); k=$(basename $d | tr -d k)
+            [ -f $d/cover.jsonl ] && python3 check_cover.py $p $k $d/certified.jsonl $d/cover.jsonl
+          done
       - name: exported summaries agree with the ledgers
         run: |
           set -e
           for d in ledgers/p*/k*; do
             p=$(basename $(dirname $d) | tr -d p); k=$(basename $d | tr -d k)
-            python3 export_ledger.py $p $k $d/certified.jsonl /tmp/exp_$p_$k >/dev/null
+            python3 export_ledger.py $p $k $d/certified.jsonl /tmp/exp_${p}_${k} >/dev/null
             python3 -c "import json,sys; a=json.load(open('/tmp/exp_${p}_${k}/summary.json')); b=json.load(open('$d/watson-format/summary.json')); assert a['cubes_recorded']==b['cubes_recorded'] and a['base_cnf_sha256']==b['base_cnf_sha256'], (a,b)"
           done
   encoder:
@@ -40,7 +47,7 @@ jobs:
       - name: build kissat
         run: |
           git clone -q --depth 1 https://github.com/arminbiere/kissat.git /tmp/kissat
-          cd /tmp/kissat && ./configure -q && make -s -j4
+          cd /tmp/kissat && ./configure && make -s -j4
           echo "/tmp/kissat/build" >> $GITHUB_PATH
       - name: property tests (whole group at k = p, breaker soundness)
-        run: python3 encoding-tests/property_tests.py
+        run: PATH=/tmp/kissat/build:$PATH python3 encoding-tests/property_tests.py
