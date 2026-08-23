@@ -1,0 +1,46 @@
+name: verify
+on:
+  push:
+  pull_request:
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: witnesses against the definition
+        run: python3 witnesses/check_witness.py
+      - name: every ledger passes the coverage and hash audit
+        run: |
+          set -e
+          for d in ledgers/p*/k*; do
+            p=$(basename $(dirname $d) | tr -d p); k=$(basename $d | tr -d k)
+            echo "== p=$p k=$k"
+            python3 audit_coverage.py $p $k $d/certified.jsonl
+          done
+      - name: exported summaries agree with the ledgers
+        run: |
+          set -e
+          for d in ledgers/p*/k*; do
+            p=$(basename $(dirname $d) | tr -d p); k=$(basename $d | tr -d k)
+            python3 export_ledger.py $p $k $d/certified.jsonl /tmp/exp_$p_$k >/dev/null
+            python3 -c "import json,sys; a=json.load(open('/tmp/exp_${p}_${k}/summary.json')); b=json.load(open('$d/watson-format/summary.json')); assert a['cubes_recorded']==b['cubes_recorded'] and a['base_cnf_sha256']==b['base_cnf_sha256'], (a,b)"
+          done
+  encoder:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: build kissat
+        run: |
+          git clone -q --depth 1 https://github.com/arminbiere/kissat.git /tmp/kissat
+          cd /tmp/kissat && ./configure -q && make -s -j4
+          echo "/tmp/kissat/build" >> $GITHUB_PATH
+      - name: property tests (whole group at k = p, breaker soundness)
+        run: python3 encoding-tests/property_tests.py
