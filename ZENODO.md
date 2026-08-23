@@ -1,3 +1,7 @@
+# Zenodo deposit: PUBLISHED 2026-08-23
+
+Record https://zenodo.org/records/22067683, version DOI 10.5281/zenodo.22067683, concept DOI (all versions) 10.5281/zenodo.22067682. Next versions: use "New version" on the record (or the GitHub integration) and keep the concept DOI in citations.
+
 # Zenodo deposit (to be created by the author; this file is the metadata draft)
 
 Title: unique-sum-free-cert: machine-checked certificates for m(p), p = 53 (v0.1)

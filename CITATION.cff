@@ -9,6 +9,14 @@ authors:
     country: PL
 type: software
 license: MIT
+doi: "10.5281/zenodo.22067683"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.22067682"
+    description: "concept DOI, all versions"
+  - type: doi
+    value: "10.5281/zenodo.22067683"
+    description: "version 0.1"
 repository-code: "https://github.com/pawelkwaczynski/unique-sum-free-cert"
 date-released: 2026-08-23
 version: 0.1.0

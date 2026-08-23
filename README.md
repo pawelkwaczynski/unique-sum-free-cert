@@ -1,5 +1,7 @@
 # unique-sum-free-cert
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22067683.svg)](https://doi.org/10.5281/zenodo.22067683) [![verify](https://github.com/pawelkwaczynski/unique-sum-free-cert/actions/workflows/verify.yml/badge.svg)](https://github.com/pawelkwaczynski/unique-sum-free-cert/actions/workflows/verify.yml)
+
 Machine-checked certificates for the exact values of m(p), the smallest size
 of a unique-sum-free subset of Z/pZ, for the primes p = 53, 59, 61, 67, 71, 73.
 These are the terms a(15) through a(20) of [OEIS A398173](https://oeis.org/A398173)
@@ -114,6 +116,10 @@ longer exists; for later ledgers the retained LRAT will be deposited with a DOI.
 - `ledgers/p<p>/k<k>/`: one ledger per (p, k), plus the exported layout.
 - `witnesses/`: the witness sets and a definition-level checker.
 - `encoding-tests/`: differential test against an independent encoder.
+
+## Cite
+
+Paweł Kwaczyński, unique-sum-free-cert: machine-checked certificates for m(p), p = 53 (v0.1), Zenodo, 2026, doi:10.5281/zenodo.22067683 (all versions: doi:10.5281/zenodo.22067682). See CITATION.cff.
 
 ## License
 
