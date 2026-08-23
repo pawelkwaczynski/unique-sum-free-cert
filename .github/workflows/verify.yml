@@ -28,6 +28,8 @@ jobs:
             p=$(basename $(dirname $d) | tr -d p); k=$(basename $d | tr -d k)
             if [ -f $d/cover.jsonl ]; then python3 check_cover.py $p $k $d/certified.jsonl $d/cover.jsonl; else echo "no cover ledger for p=$p k=$k"; exit 1; fi
           done
+      - name: negative controls (tampered inputs are rejected)
+        run: ./tests/negative_controls.sh
       - name: exported summaries agree with the ledgers
         run: |
           set -e
