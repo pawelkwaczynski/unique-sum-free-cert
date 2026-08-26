@@ -53,7 +53,12 @@ retained yet. This table is updated as ledgers land.
   finite Abelian groups, contiguous through order 52. The next rows of that
   census are the primes 53 through 73, which are the values certified here;
   `export_ledger.py` writes this repository's ledgers in his row layout so
-  the two tables can be joined without recomputation.
+  the two tables can be joined without recomputation. On 2026-08-25 he
+  replayed all 1,596 position cubes of this repository's p = 59, k = 14
+  partition through his own encoder and solver chain, every cube UNSAT with a
+  checked proof (`provenance/kwaczynski-p59-cubes-replay-2026-08-25` in his
+  repository): an independent check of the partition, on an independent
+  encoding.
 - Bedert, *On unique sums in Abelian groups*, Combinatorica 44 (2024),
   [arXiv:2303.15134](https://arxiv.org/abs/2303.15134): the theory.
 - The values m(61), m(67), m(71), m(73) were first computed here (OEIS
@@ -115,7 +120,8 @@ longer exists; for later ledgers the retained LRAT will be deposited with a DOI.
 - `export_ledger.py`: export to the Watson row layout.
 - `ledgers/p<p>/k<k>/`: one ledger per (p, k), plus the exported layout.
 - `witnesses/`: the witness sets and a definition-level checker.
-- `encoding-tests/`: differential test against an independent encoder.
+- `encoding-tests/`: differential test against an independent encoder
+  (Watson's pinned encoder is vendored there, MIT, with permission).
 
 ## Cite
 
