@@ -4,6 +4,7 @@ One third-party file is vendored (below). The verification chain depends on
 the following tools, each under its own license:
 
 - kissat, Armin Biere, MIT. https://github.com/arminbiere/kissat
+- CaDiCaL, Armin Biere and others, MIT. https://github.com/arminbiere/cadical
 - drat-trim, Marijn Heule and Nathan Wetzler, MIT. https://github.com/marijnheule/drat-trim
 - cake_lpr, Marijn Heule, Magnus Myreen and Yong Kiam Tan, under the CakeML
   copyright notice and license (BSD-style). https://github.com/tanyongkiam/cake_lpr

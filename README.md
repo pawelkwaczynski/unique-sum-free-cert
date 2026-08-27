@@ -72,10 +72,11 @@ unique-sums-notes, so a claim means the same thing in both tables.
 
 - **DRAT-certified**: the refutation is retained and replays under an
   independent checker. Nothing here is at this tier yet.
-- **solver-certified, hash-bound**: every cube's DRAT proof was checked by
-  drat-trim and replayed by cake_lpr at generation time; the proof was then
-  deleted and only its sha256, together with the sha256 of the exact CNF, is
-  kept in the ledger. The coverage auditor rebuilds each CNF from `gen_cnf.py`
+- **solver-certified, hash-bound**: every cube's proof was replayed by cake_lpr
+  at generation time (two chains: kissat DRAT checked by drat-trim and then by
+  cake_lpr, or, from 2026-08-27, CaDiCaL native LRAT checked directly by
+  cake_lpr; the ledger row says which); the proof was then deleted and only
+  its sha256, together with the sha256 of the exact CNF, is kept in the ledger. The coverage auditor rebuilds each CNF from `gen_cnf.py`
   plus the cube's unit clauses and refuses any row whose hash does not match.
   p = 53 is at this tier for every k from 2 to 13. From here on the LRAT files are retained.
 - **search only**: two independent programs agree, witness checked. No proof
@@ -117,6 +118,10 @@ longer exists; for later ledgers the retained LRAT will be deposited with a DOI.
   top level and one per split cube), after Szeider's LRAT-Catcher construction,
   so Proposition 2 is not only a hand proof; `ledgers/p*/k*/cover.jsonl`.
 - `verify_drat.sh`: drat-trim then cake_lpr on one CNF/DRAT pair.
+- `verify_lrat.sh`: cake_lpr directly on one CNF/LRAT pair (CaDiCaL native LRAT).
+- `classes/`: the number of affine classes of minimum unique-sum-free sets, one
+  representative per class, and certificates that the lists are complete
+  (see `classes/README.md`).
 - `export_ledger.py`: export to the Watson row layout.
 - `ledgers/p<p>/k<k>/`: one ledger per (p, k), plus the exported layout.
 - `witnesses/`: the witness sets and a definition-level checker.

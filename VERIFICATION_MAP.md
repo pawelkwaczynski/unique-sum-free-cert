@@ -1,6 +1,6 @@
 # Verification map
 
-One row per claim the README makes, with the file that carries it and the tier it sits at. Tiers: **checked certificate** (proof object replayed by drat-trim and cake_lpr, hash-bound to a reconstructible CNF, coverage audited, cover certificate present), **search only** (two independent search programs agree, witness checked, no proof object), **external** (someone else's result, cited), **queued** (not started).
+One row per claim the README makes, with the file that carries it and the tier it sits at. Tiers: **checked certificate** (proof object replayed by cake_lpr, via drat-trim for DRAT proofs or directly for CaDiCaL native LRAT, hash-bound to a reconstructible CNF, coverage audited, cover certificate present), **search only** (two independent search programs agree, witness checked, no proof object), **external** (someone else's result, cited), **queued** (not started).
 
 | Claim | Tier | Evidence | Status history |
 |---|---|---|---|

@@ -4,8 +4,9 @@ Fail-closed.
 
 The auditor does not trust what the ledger says about itself:
   - a row counts only with the full set of fields: p, k, cube, status,
-    proof_verified, verdict=PASS, drat_trim=VERIFIED (rc 0),
-    cake_lpr=VERIFIED (rc 0), cnf_sha256; p and k must match the arguments;
+    proof_verified, verdict=PASS, cake_lpr=VERIFIED (rc 0), cnf_sha256, and either
+    drat_trim=VERIFIED (rc 0) or chain=cadical-lrat-cake_lpr with lrat_sha256
+    (native LRAT, no drat-trim); p and k must match the arguments;
   - for every accepted tag the auditor rebuilds the exact CNF
     (gen_cnf.build plus the cube's unit clauses, same serialization as the
     certifier) and compares sha256, so a proof is bound to a formula, not to
@@ -85,8 +86,14 @@ def main():
         if st == "SAT":
             sat_entries.append((ln, e))
         elif st == "UNSAT":
+            # Two proof chains are accepted. Either kissat -> DRAT -> drat-trim -> LRAT
+            # -> cake_lpr (drat_trim must be VERIFIED), or cadical -> LRAT -> cake_lpr
+            # (chain = "cadical-lrat-cake_lpr", lrat_sha256 present, drat-trim skipped by
+            # design). In both the verdict comes from cake_lpr, the formally verified checker.
+            native = (e.get("chain") == "cadical-lrat-cake_lpr" and bool(e.get("lrat_sha256")))
+            trim_ok = (e.get("drat_trim") == "VERIFIED" and e.get("drat_trim_rc") == 0)
             if (e.get("proof_verified") is True and e.get("verdict") == "PASS"
-                    and e.get("drat_trim") == "VERIFIED" and e.get("drat_trim_rc") == 0
+                    and (trim_ok or native)
                     and e.get("cake_lpr") == "VERIFIED" and e.get("cake_lpr_rc") == 0
                     and e.get("cnf_sha256")):
                 candidates[e["cube"]] = e["cnf_sha256"]
