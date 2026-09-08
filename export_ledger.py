@@ -38,14 +38,19 @@ def main():
     for tag, r in last.items():
         if r.get("status") != "UNSAT" or not r.get("proof_verified"):
             continue
+        # two proof chains: kissat -> DRAT -> drat-trim -> cake_lpr (drat_sha256),
+        # or CaDiCaL native LRAT -> cake_lpr (chain field, lrat_sha256, drat-trim skipped)
+        native = r.get("chain") == "cadical-lrat-cake_lpr"
         rows.append({
             "cube_id": tag, "assumptions": r["units"], "depth": len(r["units"]),
             "cuber": CUBER, "p": p, "k": k,
             "encoder_path": "gen_cnf.py", "encoder_sha256": enc_sha,
             "base_cnf_sha256": base_sha, "cnf_sha256": r["cnf_sha256"],
-            "solver": "kissat", "solver_returncode": 20, "verdict": "UNSAT",
+            "solver": "cadical" if native else "kissat", "solver_returncode": 20, "verdict": "UNSAT",
             "solve_seconds": r["solve_s"],
-            "drat_sha256": r["drat_sha256"], "drat_bytes": r.get("drat_bytes"),
+            "proof_format": "lrat" if native else "drat",
+            "proof_sha256": r["lrat_sha256"] if native else r["drat_sha256"],
+            "drat_sha256": r.get("drat_sha256"), "drat_bytes": r.get("drat_bytes"),
             "drat_trim_verified": r.get("drat_trim") == "VERIFIED",
             "cake_lpr_verified": r.get("cake_lpr") == "VERIFIED",
             "verify_seconds": r["verify_s"],
@@ -57,6 +62,7 @@ def main():
     summary = {
         "p": p, "k": k, "cubes_recorded": len(rows),
         "verdicts": dict(collections.Counter(o["verdict"] for o in rows)),
+        "proof_chains": dict(collections.Counter(o["proof_format"] for o in rows)),
         "drat_trim_verified": sum(o["drat_trim_verified"] for o in rows),
         "cake_lpr_verified": sum(o["cake_lpr_verified"] for o in rows),
         "encoder_sha256": enc_sha, "base_cnf_sha256": base_sha,

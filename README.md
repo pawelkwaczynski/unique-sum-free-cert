@@ -27,11 +27,11 @@ details in `encoding-tests/README.md`). Those files are kept under
 | p | m(p) | witness | lower bound k = 2 .. m(p)-1 | status |
 |---|---|---|---|---|
 | 53 | 14 | `witnesses/` | every k = 2..13 refuted, each rung audited (`ledgers/p53/`) | solver-certified, hash-bound |
-| 59 | 15 | `witnesses/` | queued | search only |
-| 61 | 15 | `witnesses/` | queued | search only |
-| 67 | 16 | `witnesses/` | k = 15 in progress on cloud workers | search only |
-| 71 | 16 | `witnesses/` | k = 15 in progress on cloud workers | search only |
-| 73 | 16 | `witnesses/` | queued | search only |
+| 59 | 15 | `witnesses/` | every k = 2..14 refuted, each rung audited (`ledgers/p59/`) | solver-certified, hash-bound (CaDiCaL native LRAT, cake_lpr) |
+| 61 | 15 | `witnesses/` | k = 14 refuted on cloud workers, ledger audited, not yet published here; k = 2..13 queued | search only |
+| 67 | 16 | `witnesses/` | k = 15 refuted on cloud workers, ledger audited, not yet published here; k = 2..14 queued | search only |
+| 71 | 16 | `witnesses/` | k = 14 refuted, not yet published here; k = 15 in progress on cloud workers | search only |
+| 73 | 16 | `witnesses/` | k = 15 in progress on cloud workers | search only |
 
 "Search only" means the value was established by two independent search
 programs (an orbit-canonical branch-and-bound in C and a SAT cube-and-conquer),
