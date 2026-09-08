@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use these certificates or witnesses, please cite them as below."
-title: "unique-sum-free-cert: machine-checked certificates for m(p) (OEIS A398173)"
+title: "unique-sum-free-cert: machine-checked certificates for m(p), p = 53 and 59 (OEIS A398173)"
 authors:
   - family-names: Kwaczyński
     given-names: Paweł
@@ -9,7 +9,7 @@ authors:
     country: PL
 type: software
 license: MIT
-doi: "10.5281/zenodo.22067683"
+doi: "10.5281/zenodo.22067682"
 identifiers:
   - type: doi
     value: "10.5281/zenodo.22067682"
@@ -17,6 +17,7 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.22067683"
     description: "version 0.1"
+  # version 0.2 DOI: add here once Zenodo mints it for the v0.2 release
 repository-code: "https://github.com/pawelkwaczynski/unique-sum-free-cert"
-date-released: 2026-08-23
-version: 0.1.0
+date-released: 2026-09-08
+version: 0.2.0

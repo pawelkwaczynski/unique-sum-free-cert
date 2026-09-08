@@ -1,6 +1,6 @@
 # unique-sum-free-cert
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22067683.svg)](https://doi.org/10.5281/zenodo.22067683) [![verify](https://github.com/pawelkwaczynski/unique-sum-free-cert/actions/workflows/verify.yml/badge.svg)](https://github.com/pawelkwaczynski/unique-sum-free-cert/actions/workflows/verify.yml)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22067682.svg)](https://doi.org/10.5281/zenodo.22067682) [![verify](https://github.com/pawelkwaczynski/unique-sum-free-cert/actions/workflows/verify.yml/badge.svg)](https://github.com/pawelkwaczynski/unique-sum-free-cert/actions/workflows/verify.yml)
 
 Machine-checked certificates for the exact values of m(p), the smallest size
 of a unique-sum-free subset of Z/pZ, for the primes p = 53, 59, 61, 67, 71, 73.
@@ -130,7 +130,7 @@ longer exists; for later ledgers the retained LRAT will be deposited with a DOI.
 
 ## Cite
 
-Paweł Kwaczyński, unique-sum-free-cert: machine-checked certificates for m(p), p = 53 (v0.1), Zenodo, 2026, doi:10.5281/zenodo.22067683 (all versions: doi:10.5281/zenodo.22067682). See CITATION.cff.
+Paweł Kwaczyński, unique-sum-free-cert: machine-checked certificates for m(p), p = 53 and 59 (v0.2), Zenodo, 2026, doi:10.5281/zenodo.22067682 (concept DOI, resolves to the latest version; v0.1: doi:10.5281/zenodo.22067683). See CITATION.cff.
 
 ## License
 

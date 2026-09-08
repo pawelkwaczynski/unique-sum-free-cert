@@ -1,3 +1,20 @@
+# Zenodo deposit, version 0.2 (2026-09-08)
+
+Concept DOI (all versions): 10.5281/zenodo.22067682. Version 0.1: 10.5281/zenodo.22067683. The
+version DOI for 0.2 is minted by Zenodo when the new version is published (GitHub integration on
+the v0.2 release, or "New version" on the record with the v0.2 tarball); put it in CITATION.cff
+and README afterwards.
+
+Title: unique-sum-free-cert: machine-checked certificates for m(p), p = 53 and 59 (v0.2)
+Upload type: dataset
+Creators: Kwaczyński, Paweł (ORCID 0009-0004-0627-3621), Łódź, Poland
+License: CC BY 4.0 (data); code MIT in the repository
+Keywords: unique-sum-free sets, Green's Problem 27, OEIS A398173, OEIS A399437, SAT, DRAT, LRAT, CaDiCaL, cake_lpr, cube-and-conquer, certificates, affine classes
+Related identifiers: https://oeis.org/A398173 (isSupplementTo), https://oeis.org/A399437 (isSupplementTo), https://github.com/pawelkwaczynski/unique-sum-free-cert (isSupplementTo), doi:10.7282/t3-1w2k-jr68 (cites, Scheinerman 2019), arXiv:2303.15134 (cites, Bedert), https://github.com/mkwatson/unique-sums-notes (references)
+Description (short): Ledgers of hash-bound unsatisfiability certificates refuting a unique-sum-free subset of Z/pZ of size k for every k from 2 to m(p)-1, for p = 53 (k = 2..13, kissat, DRAT checked by drat-trim and cake_lpr) and p = 59 (k = 2..14, CaDiCaL native LRAT checked by cake_lpr), cover certificates for every cube partition, the witnesses of size m(p), the encoder and the auditors that rebuild every CNF and check coverage. New in 0.2: the complete p = 59 ladder (28,496 ledger rows, 151.8 CPU-h), the affine classes of minimizers with completeness certificates for 11 <= p <= 47 (classes/, OEIS A399437), and an auditor that accepts the native LRAT chain. Values for p = 61, 67, 71, 73 are not certified in this version (see VERIFICATION_MAP.md); single rungs for those primes are finished on cloud workers and will follow.
+Files: release tarball of the tagged repository (tag v0.2), SHA256SUMS, ledgers/ (p53, p59: certified.jsonl, cover.jsonl, watson-format/ per rung), classes/, witnesses/.
+Version: 0.2 (2026-09-08). Next versions add p = 61, 67, 71, 73 and the completeness certificates for the classes at p >= 53.
+
 # Zenodo deposit: PUBLISHED 2026-08-23
 
 Record https://zenodo.org/records/22067683, version DOI 10.5281/zenodo.22067683, concept DOI (all versions) 10.5281/zenodo.22067682. Next versions: use "New version" on the record (or the GitHub integration) and keep the concept DOI in citations.
