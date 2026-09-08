@@ -4,27 +4,37 @@ For each odd prime p with m(p) known (A398173), the number of subsets of Z/pZ of
 with no unique sum, counted up to the affine maps x -> a x + b (a != 0), one representative
 per class, and a certificate that the list is complete.
 
-| p  | m(p) | classes | evidence |
-|----|------|---------|----------|
-| 3  | 3  | 1  | three methods (B, brute force, SAT enumeration) |
-| 5  | 4  | 1  | three methods |
-| 7  | 5  | 1  | three methods |
-| 11 | 7  | 4  | three methods; completeness certified |
-| 13 | 7  | 1  | three methods; certified |
-| 17 | 8  | 1  | three methods; certified |
-| 19 | 9  | 9  | three methods; certified |
-| 23 | 10 | 35 | three methods; certified |
-| 29 | 11 | 30 | three methods; certified |
-| 31 | 11 | 5  | three methods; certified |
-| 37 | 12 | 13 | three methods; certified |
-| 41 | 13 | 69 | engine B list; stabilizer count matches engine v1 (5,274); certificate by cubes in progress |
-| 43 | 13 | 23 | engine B list; matches v1 (1,794); certificate in progress |
-| 47 | 13 | 2  | engine B list; matches v1 (156); certificate in progress |
-| 53 | 14 | 2  | engine B list; matches v1 (182); certificate queued |
-| 59 | 15 | 12 | engine B list; v1 count running (predicted 1,260) |
-| 61 | 15 | 3  | engine B list; v1 count queued (predicted 231) |
+| p  | m(p) | classes | how the list was obtained | completeness |
+|----|------|---------|---------------------------|--------------|
+| 3  | 3  | 1  | engine B; brute force over all subsets | trivial (brute force) |
+| 5  | 4  | 1  | engine B; brute force | trivial (brute force) |
+| 7  | 5  | 1  | engine B; brute force | trivial (brute force) |
+| 11 | 7  | 4  | engine B; brute force; SAT model enumeration | certified, whole formula |
+| 13 | 7  | 1  | engine B; brute force | certified, whole formula |
+| 17 | 8  | 1  | engine B; brute force | certified, whole formula |
+| 19 | 9  | 9  | engine B; brute force; SAT model enumeration | certified, whole formula |
+| 23 | 10 | 35 | engine B; brute force; SAT model enumeration | certified, whole formula |
+| 29 | 11 | 30 | engine B; brute force; SAT model enumeration | certified, whole formula |
+| 31 | 11 | 5  | engine B; brute force; SAT model enumeration | certified, whole formula |
+| 37 | 12 | 13 | engine B; SAT model enumeration | certified, whole formula |
+| 41 | 13 | 69 | engine B; v1 count agrees (5,274) | certified, 741 position cubes |
+| 43 | 13 | 23 | engine B; v1 count agrees (1,794) | certified, 820 position cubes |
+| 47 | 13 | 2  | engine B; v1 count agrees (156) | certified, 990 position cubes |
+| 53 | 14 | 2  | engine B; v1 count agrees (182) | not certified: 1,227 cubes UNSAT, 48 timed out |
+| 59 | 15 | 12 | engine B list only | not certified |
+| 61 | 15 | 3  | engine B list only | not certified |
+| 67 | 16 | 24 | engine B list only | not certified |
+| 71 | 16 | 2  | engine B list only | not certified |
 
-Sequence: 1, 1, 1, 4, 1, 1, 9, 35, 30, 5, 13, 69, 23, 2, 2, 12, 3 (not in the OEIS as of 2026-08-26).
+Brute force stops at p = 31, SAT model enumeration was run for p = 11, 19, 23, 29, 31, 37
+(it times out at p = 41 and 43), and the whole-formula certificate covers 11 <= p <= 37.
+Engine v1 shares the author and the search idea with engine B, so agreement of its count is
+a consistency check, not an independent method. The certificate is what makes a list
+complete; where the last column says "not certified", the count is the output of one
+program.
+
+Sequence: 1, 1, 1, 4, 1, 1, 9, 35, 30, 5, 13, 69, 23, 2, 2, 12, 3, 24, 2 for p = 3 to 71,
+[OEIS A399437](https://oeis.org/A399437) (approved 2026-09-06).
 
 ## Methods
 
