@@ -130,7 +130,7 @@ longer exists; for later ledgers the retained LRAT will be deposited with a DOI.
 
 ## Cite
 
-Paweł Kwaczyński, unique-sum-free-cert: machine-checked certificates for m(p), p = 53 and 59 (v0.2), Zenodo, 2026, doi:10.5281/zenodo.22067682 (concept DOI, resolves to the latest version; v0.1: doi:10.5281/zenodo.22067683). See CITATION.cff.
+Paweł Kwaczyński, unique-sum-free-cert: machine-checked certificates for m(p), p = 53 and 59 (v0.2), Zenodo, 2026, doi:10.5281/zenodo.22067682 (concept DOI, all versions). The Zenodo deposit currently carries v0.1 (doi:10.5281/zenodo.22067683); the v0.2 deposit follows. See CITATION.cff.
 
 ## License
 
