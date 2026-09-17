@@ -28,15 +28,22 @@ details in `encoding-tests/README.md`). Those files are kept under
 |---|---|---|---|---|
 | 53 | 14 | `witnesses/` | every k = 2..13 refuted, each rung audited (`ledgers/p53/`) | solver-certified, hash-bound |
 | 59 | 15 | `witnesses/` | every k = 2..14 refuted, each rung audited (`ledgers/p59/`) | solver-certified, hash-bound (CaDiCaL native LRAT, cake_lpr) |
-| 61 | 15 | `witnesses/` | k = 14 refuted on cloud workers, ledger audited, not yet published here; k = 2..13 queued | search only |
-| 67 | 16 | `witnesses/` | k = 15 refuted on cloud workers, ledger audited, not yet published here; k = 2..14 queued | search only |
-| 71 | 16 | `witnesses/` | k = 14 refuted, not yet published here; k = 15 in progress on cloud workers | search only |
-| 73 | 16 | `witnesses/` | k = 15 in progress on cloud workers | search only |
+| 61 | 15 | `witnesses/` | every k = 2..14 refuted, each rung audited (`ledgers/p61/`) | solver-certified, hash-bound |
+| 67 | 16 | `witnesses/` | every k = 2..15 refuted, each rung audited (`ledgers/p67/`) | solver-certified, hash-bound |
+| 71 | 16 | `witnesses/` | every k = 2..15 refuted, each rung audited (`ledgers/p71/`) | solver-certified, hash-bound |
+| 73 | 16 | `witnesses/` | every k = 2..15 refuted, each rung audited (`ledgers/p73/`) | solver-certified, hash-bound |
 
-"Search only" means the value was established by two independent search
-programs (an orbit-canonical branch-and-bound in C and a SAT cube-and-conquer),
-with the witness checked by a third method, but no proof object has been
-retained yet. This table is updated as ledgers land.
+Every rung of every prime is at the same tier: each cube's proof was checked
+by cake_lpr when it was produced, the proof's hash and the hash of the exact
+CNF are in the ledger, and `audit_coverage.py` rebuilds every CNF and checks
+that the cubes cover the search space. Two proof chains occur in the ledgers
+and the row says which: kissat DRAT checked by drat-trim and cake_lpr (the
+early rows), or CaDiCaL native LRAT checked by cake_lpr (most rows from
+2026-08-27 on). p = 61, 67, 71, 73 were finished on the EuroHPC supercomputer
+LUMI-C (September 2026); see `ledgers/p<p>/README.md` for the per-rung
+numbers and the machines. The two largest ledgers, p = 71 and p = 73 at
+k = 15, are stored gzip-compressed (`certified.jsonl.gz`); every tool here
+reads both forms.
 
 ## Prior work, exactly
 
@@ -62,8 +69,9 @@ retained yet. This table is updated as ledgers land.
 - Bedert, *On unique sums in Abelian groups*, Combinatorica 44 (2024),
   [arXiv:2303.15134](https://arxiv.org/abs/2303.15134): the theory.
 - The values m(61), m(67), m(71), m(73) were first computed here (OEIS
-  A398173, August 2026). m(53) and m(59) were proved minimal independently
-  here and by Watson in the same month.
+  A398173, August 2026) and are certified here since v0.3 (September 2026).
+  m(53) and m(59) were proved minimal independently here and by Watson in
+  August 2026.
 
 ## Verification tiers
 
@@ -78,9 +86,9 @@ unique-sums-notes, so a claim means the same thing in both tables.
   cake_lpr; the ledger row says which); the proof was then deleted and only
   its sha256, together with the sha256 of the exact CNF, is kept in the ledger. The coverage auditor rebuilds each CNF from `gen_cnf.py`
   plus the cube's unit clauses and refuses any row whose hash does not match.
-  p = 53 is at this tier for every k from 2 to 13. From here on the LRAT files are retained.
+  Every rung of p = 53, 59, 61, 67, 71, 73 is at this tier.
 - **search only**: two independent programs agree, witness checked. No proof
-  object.
+  object. No value in this repository is at this tier since v0.3.
 
 Trusted surfaces that nothing here certifies: that `gen_cnf.py` encodes the
 definition faithfully (see `encoding-tests/` for what has been tested), the
@@ -99,9 +107,10 @@ python3 audit_coverage.py 53 13 ledgers/p53/k13/certified.jsonl   # coverage + h
 python3 gen_cnf.py 53 13 > p53k13.cnf                   # the formula itself
 ```
 
-The auditor needs nothing beyond Python. Re-checking an individual proof needs
-the tool chain in `tools/README.md` and the proof file, which for p = 53 no
-longer exists; for later ledgers the retained LRAT will be deposited with a DOI.
+The auditor needs nothing beyond Python (the p = 73, k = 15 ledger has
+519,478 rows and audits in about a minute). Re-checking an individual proof
+needs the tool chain in `tools/README.md` and the proof file; proof files were
+checked at generation and not retained (see the tiers above).
 
 ## Layout
 
@@ -130,7 +139,15 @@ longer exists; for later ledgers the retained LRAT will be deposited with a DOI.
 
 ## Cite
 
-Paweł Kwaczyński, unique-sum-free-cert: machine-checked certificates for m(p), p = 53 and 59 (v0.2), Zenodo, 2026, doi:10.5281/zenodo.22067682 (concept DOI, all versions). The Zenodo deposit currently carries v0.1 (doi:10.5281/zenodo.22067683); the v0.2 deposit follows. See CITATION.cff.
+Paweł Kwaczyński, unique-sum-free-cert: machine-checked certificates for m(p), p = 53 to 73 (v0.3), Zenodo, 2026, doi:10.5281/zenodo.22067682 (concept DOI, all versions). The version DOI of v0.3 goes here once Zenodo mints it. See CITATION.cff.
+
+## Acknowledgement
+
+We acknowledge EuroHPC Joint Undertaking for awarding us access to LUMI at
+CSC, Finland (Development Access project EHPC-DEV-2026D09-324). The rungs
+k = 2..13 of p = 61 and p = 71, k = 2..14 of p = 67 and p = 73, and the last
+four split rounds of p = 71 and p = 73 at k = 15 were computed there; the
+remaining rungs ran on cloud workers (Google Cloud e2-standard-8).
 
 ## License
 

@@ -1,3 +1,20 @@
+# Zenodo deposit, version 0.3 (2026-09-18)
+
+Concept DOI (all versions): 10.5281/zenodo.22067682. Version 0.1: 10.5281/zenodo.22067683. Version 0.2 was
+released on GitHub (tag v0.2, 2026-09-08) but never deposited; v0.3 supersedes it and is the next deposit.
+Manual "New version" on the record, GitHub integration stays off for this repository.
+
+Title: unique-sum-free-cert: machine-checked certificates for m(p), p = 53 to 73 (v0.3)
+Upload type: dataset
+Creators: Kwaczyński, Paweł (ORCID 0009-0004-0627-3621), Łódź, Poland
+License: CC BY 4.0 (data); code MIT in the repository
+Keywords: unique-sum-free sets, Green's Problem 27, OEIS A398173, OEIS A399437, SAT, DRAT, LRAT, CaDiCaL, kissat, cake_lpr, cube-and-conquer, certificates, affine classes, LUMI
+Related identifiers: https://oeis.org/A398173 (isSupplementTo), https://oeis.org/A399437 (isSupplementTo), https://github.com/pawelkwaczynski/unique-sum-free-cert (isSupplementTo), doi:10.7282/t3-1w2k-jr68 (cites, Scheinerman 2019), arXiv:2303.15134 (cites, Bedert), https://github.com/mkwatson/unique-sums-notes (references)
+Description (short): Ledgers of hash-bound unsatisfiability certificates refuting a unique-sum-free subset of Z/pZ of size k for every k from 2 to m(p)-1, for the six primes p = 53, 59, 61, 67, 71, 73 (OEIS A398173, a(15) to a(20)), cover certificates for every cube partition, the witnesses of size m(p), the encoder and the auditors that rebuild every CNF and check coverage. New in 0.3: the complete ladders for p = 61 (k = 2..14), 67 (k = 2..15), 71 (k = 2..15) and 73 (k = 2..15), 1,171,344 ledger rows in total, computed on cloud workers and on the EuroHPC supercomputer LUMI-C (Development Access EHPC-DEV-2026D09-324); the two largest ledgers are gzip-compressed and every tool reads both forms. Also carries what v0.2 added on GitHub: the p = 59 ladder, classes/ (OEIS A399437) and the native LRAT chain in the auditor.
+Files: release tarball of the tagged repository (tag v0.3), SHA256SUMS, ledgers/ (p53 .. p73: certified.jsonl[.gz], cover.jsonl, watson-format/ per rung), classes/, witnesses/.
+Acknowledgement (required by the EuroHPC Development Access terms): We acknowledge EuroHPC Joint Undertaking for awarding us access to LUMI at CSC, Finland.
+Version: 0.3 (2026-09-18). Next: classes for p >= 53 (A399437 a(20) once the p = 73 census finishes), m(79) cost sample.
+
 # Zenodo deposit, version 0.2 (2026-09-08)
 
 Concept DOI (all versions): 10.5281/zenodo.22067682. Version 0.1: 10.5281/zenodo.22067683. The

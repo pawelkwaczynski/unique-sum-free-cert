@@ -64,5 +64,42 @@ def serialize_cnf(nvars, clauses, extra_units):
     return "".join(out).encode()
 
 
+_PREFIX_CACHE = {}
+
+
 def cnf_sha256(nvars, clauses, extra_units):
+    """sha256 of serialize_cnf(nvars, clauses, extra_units), byte for byte.
+
+    The header and the base clauses depend only on (nvars, clauses, number of
+    units), so their hash state is computed once per unit count and copied.
+    The cache pins the clauses object it was built from, so a recycled id can
+    never alias a different list. audit_coverage.py --selftest checks the
+    equality against the plain serialization."""
+    key = (nvars, id(clauses), len(clauses), len(extra_units))
+    hit = _PREFIX_CACHE.get(key)
+    if hit is None or hit[0] is not clauses:
+        h = hashlib.sha256()
+        h.update(f"p cnf {nvars} {len(clauses) + len(extra_units)}\n".encode())
+        for c in clauses:
+            h.update((" ".join(map(str, dict.fromkeys(c))) + " 0\n").encode())
+        for stale in [q for q, v in _PREFIX_CACHE.items() if v[0] is not clauses]:
+            del _PREFIX_CACHE[stale]
+        _PREFIX_CACHE[key] = hit = (clauses, h)
+    h = hit[1].copy()
+    for u in extra_units:
+        h.update(f"{u} 0\n".encode())
+    return h.hexdigest()
+
+
+def cnf_sha256_plain(nvars, clauses, extra_units):
+    """Reference without the prefix cache; used by the self-test only."""
     return hashlib.sha256(serialize_cnf(nvars, clauses, extra_units)).hexdigest()
+
+
+def open_ledger(path):
+    """Text handle for a ledger, gzip-compressed when the name ends in .gz.
+    The large rungs (p = 71 and 73 at k = 15) are stored compressed."""
+    if path.endswith(".gz"):
+        import gzip
+        return gzip.open(path, "rt")
+    return open(path)

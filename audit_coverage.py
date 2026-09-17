@@ -20,7 +20,8 @@ Coverage: the base is the set of fine cubes (c, d) with 2 <= c < d <= p-1
 (c, d, e), e in d+1..p-1 (k >= 5), recursively. The tag "whole" (the entire
 formula, used for k <= 4) covers everything without a coverage argument.
 
-Usage: audit_coverage.py p k ledger.jsonl
+Usage: audit_coverage.py p k ledger.jsonl[.gz]
+       audit_coverage.py --selftest p k   (cached hash == plain hash on 300 cubes)
 Exit code: 0 = UNSAT-CERTIFIED, 10 = SAT, 1 = INCOMPLETE or error
 """
 import json
@@ -29,7 +30,7 @@ import os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import gen_cnf
-from cubes import tag_units, children_tags, cnf_sha256
+from cubes import tag_units, children_tags, cnf_sha256, cnf_sha256_plain, open_ledger
 
 
 def units_for_tag(p, tag):
@@ -73,7 +74,7 @@ def main():
     nvars, clauses = gen_cnf.build(p, k)
 
     candidates, sat_entries, rejected = {}, [], []
-    for ln, line in enumerate(open(out), 1):
+    for ln, line in enumerate(open_ledger(out), 1):
         try:
             e = json.loads(line)
         except json.JSONDecodeError:
@@ -164,5 +165,24 @@ def main():
     sys.exit(0)
 
 
+def selftest(p, k):
+    """The cached hash must equal the plain serialization on every cube shape."""
+    import random
+    nvars, clauses = gen_cnf.build(p, k)
+    tags = [f"c{c}_d{d}" for c in range(2, p) for d in range(c + 1, p)]
+    rng = random.Random(1)
+    sample = rng.sample(tags, min(150, len(tags)))
+    sample += [t for par in sample[:30] for t in children_tags(p, par)[:5]]
+    bad = 0
+    for t in sample[:300]:
+        u = tag_units(p, t)
+        if cnf_sha256(nvars, clauses, u) != cnf_sha256_plain(nvars, clauses, u):
+            bad += 1
+    print(f"selftest p={p} k={k}: {len(sample[:300])} cubes, mismatches {bad}")
+    sys.exit(1 if bad else 0)
+
+
 if __name__ == "__main__":
+    if sys.argv[1:2] == ["--selftest"]:
+        selftest(int(sys.argv[2]), int(sys.argv[3]))
     main()

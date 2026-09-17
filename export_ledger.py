@@ -16,7 +16,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import gen_cnf
-from cubes import serialize_cnf
+from cubes import serialize_cnf, open_ledger
 
 CUBER = "position cubes: c, d, e = 3rd, 4th, 5th smallest element of A after fixing 0, 1 in A; residues between fixed elements excluded"
 
@@ -30,7 +30,7 @@ def main():
     base_sha = hashlib.sha256(serialize_cnf(nv, cl, [])).hexdigest()
 
     last = {}
-    for line in open(ledger):
+    for line in open_ledger(ledger):
         if line.strip():
             r = json.loads(line)
             last[r["cube"]] = r

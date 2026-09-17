@@ -11,7 +11,7 @@ Two certificates per ledger: the top-level cover (all c_d cubes, or the
 single "whole" tag) and, for every cube that was closed through its
 children, a child cover: units(parent) and (for every child: not child).
 
-Usage: cover_cert.py p k ledger.jsonl out.jsonl  [--tools DIR]
+Usage: cover_cert.py p k ledger.jsonl[.gz] out.jsonl  [--tools DIR]
 Writes one JSON row per certificate with cnf_sha256, drat_sha256, verdict.
 Exit 0 when every cover certificate verified, 1 otherwise.
 """
@@ -25,7 +25,7 @@ import tempfile
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import gen_cnf
-from cubes import tag_units, children_tags, serialize_cnf
+from cubes import tag_units, children_tags, serialize_cnf, open_ledger
 
 
 def card_formula(p, k):
@@ -63,7 +63,7 @@ def main():
         i = args.index("--tools"); tools = args[i + 1]; del args[i:i + 2]
     p, k, ledger, out = int(args[0]), int(args[1]), args[2], args[3]
     last = {}
-    for line in open(ledger):
+    for line in open_ledger(ledger):
         if line.strip():
             r = json.loads(line); last[r["cube"]] = r
     verified = {t for t, r in last.items() if r.get("status") == "UNSAT" and r.get("proof_verified")}

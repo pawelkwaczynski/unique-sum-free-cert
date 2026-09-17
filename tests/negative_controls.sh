@@ -55,6 +55,11 @@ printf '#!/bin/sh\nexit 0\n' > $T/fake/drat-trim/drat-trim; printf '#!/bin/sh\ne
 chmod +x $T/fake/drat-trim/drat-trim $T/fake/cake_lpr/cake_lpr
 printf 'p cnf 1 2\n1 0\n-1 0\n' > $T/t.cnf; printf '0\n' > $T/t.drat
 expect_fail "fake checker" env DRAT_TRIM=$T/fake/drat-trim/drat-trim CAKE_LPR=$T/fake/cake_lpr/cake_lpr ./verify_drat.sh $T/t.cnf $T/t.drat
+# 8. compressed ledgers: an intact gzip copy must pass, a tampered one must be rejected
+gzip -c $L > $T/ok.jsonl.gz
+if python3 audit_coverage.py 53 5 $T/ok.jsonl.gz >/dev/null 2>&1; then echo "accepted: intact gzip ledger"; else echo "NOT ACCEPTED: intact gzip ledger"; fails=$((fails+1)); fi
+gzip -c $T/badhash.jsonl > $T/badhash.jsonl.gz
+expect_fail "mutated cnf hash (gzip)" python3 audit_coverage.py 53 5 $T/badhash.jsonl.gz
 rm -rf $T
 echo "negative controls: $fails not rejected"
 exit $fails

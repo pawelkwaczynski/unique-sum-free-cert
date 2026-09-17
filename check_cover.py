@@ -14,14 +14,14 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from cubes import tag_units, children_tags, serialize_cnf
+from cubes import tag_units, children_tags, serialize_cnf, open_ledger
 from cover_cert import card_formula
 
 
 def main():
     p, k, ledger, cover = int(sys.argv[1]), int(sys.argv[2]), sys.argv[3], sys.argv[4]
     last = {}
-    for line in open(ledger):
+    for line in open_ledger(ledger):
         if line.strip():
             r = json.loads(line); last[r["cube"]] = r
     verified = {t for t, r in last.items() if r.get("status") == "UNSAT" and r.get("proof_verified")}

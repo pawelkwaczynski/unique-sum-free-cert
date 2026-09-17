@@ -5,7 +5,7 @@ on:
 jobs:
   audit:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -13,20 +13,24 @@ jobs:
           python-version: "3.12"
       - name: witnesses against the definition
         run: python3 witnesses/check_witness.py
+      - name: cached formula hash agrees with the plain serialization
+        run: python3 audit_coverage.py --selftest 73 15
       - name: every ledger passes the coverage and hash audit
         run: |
           set -e
           for d in ledgers/p*/k*; do
             p=$(basename $(dirname $d) | tr -d p); k=$(basename $d | tr -d k)
-            echo "== p=$p k=$k"
-            python3 audit_coverage.py $p $k $d/certified.jsonl
+            L=$d/certified.jsonl; [ -f $L ] || L=$L.gz
+            echo "== p=$p k=$k ($L)"
+            python3 audit_coverage.py $p $k $L
           done
       - name: cover certificates are bound to the reconstructed cover formulas
         run: |
           set -e
           for d in ledgers/p*/k*; do
             p=$(basename $(dirname $d) | tr -d p); k=$(basename $d | tr -d k)
-            if [ -f $d/cover.jsonl ]; then python3 check_cover.py $p $k $d/certified.jsonl $d/cover.jsonl; else echo "no cover ledger for p=$p k=$k"; exit 1; fi
+            L=$d/certified.jsonl; [ -f $L ] || L=$L.gz
+            if [ -f $d/cover.jsonl ]; then python3 check_cover.py $p $k $L $d/cover.jsonl; else echo "no cover ledger for p=$p k=$k"; exit 1; fi
           done
       - name: negative controls (tampered inputs are rejected)
         run: ./tests/negative_controls.sh
@@ -35,7 +39,8 @@ jobs:
           set -e
           for d in ledgers/p*/k*; do
             p=$(basename $(dirname $d) | tr -d p); k=$(basename $d | tr -d k)
-            python3 export_ledger.py $p $k $d/certified.jsonl /tmp/exp_${p}_${k} >/dev/null
+            L=$d/certified.jsonl; [ -f $L ] || L=$L.gz
+            python3 export_ledger.py $p $k $L /tmp/exp_${p}_${k} >/dev/null
             python3 -c "import json,sys; a=json.load(open('/tmp/exp_${p}_${k}/summary.json')); b=json.load(open('$d/watson-format/summary.json')); assert a['cubes_recorded']==b['cubes_recorded'] and a['base_cnf_sha256']==b['base_cnf_sha256'], (a,b)"
           done
   encoder:

@@ -12,6 +12,6 @@
 | 8 | Ledger edited by hand | CI re-audits every ledger on every push; cover and export summaries recomputed | covered |
 | 9 | Symmetry reduction unsound (normalization, reflection) | hand proof for normalization; breaker soundness tested for p <= 23; breaker-free run possible at any time | covered by tests, not by proof at large p |
 | 10 | Solver bug producing a wrong proof | proof replayed by drat-trim and by the formally verified cake_lpr | covered |
-| 11 | The exact value is right but the claim overreaches (k below m(p) never refuted) | full ladders k = 2..m(p)-1 per prime; VERIFICATION_MAP tiers | p = 53 complete; others queued |
+| 11 | The exact value is right but the claim overreaches (k below m(p) never refuted) | full ladders k = 2..m(p)-1 per prime; VERIFICATION_MAP tiers | all six primes complete since v0.3 (p = 53, 59, 61, 67, 71, 73) |
 
 Trusted surfaces that remain: `gen_cnf.py` and `cubes.py` (tested, not proved), `audit_coverage.py` and `check_cover.py` (plain Python, readable in an hour), drat-trim and cake_lpr, and the hand proofs of normalization and of Proposition 2 (the latter now also certified).
