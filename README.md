@@ -109,8 +109,12 @@ python3 gen_cnf.py 53 13 > p53k13.cnf                   # the formula itself
 
 The auditor needs nothing beyond Python (the p = 73, k = 15 ledger has
 519,478 rows and audits in about a minute). Re-checking an individual proof
-needs the tool chain in `tools/README.md` and the proof file; proof files were
-checked at generation and not retained (see the tiers above).
+needs the tool chain in `tools/README.md` and the proof file. Proof files were
+checked at generation and, with one exception, not retained: for the top rung
+of each of p = 61, 67, 71, 73 a sample of about 5% of the top-level cubes was
+re-run with the proofs kept (404 LRAT files, 13 GB, every one checked by
+cake_lpr), and that sample is deposited with the v0.3 Zenodo record, with a
+per-cube table of proof size, `lrat_sha256` and `cnf_sha256`.
 
 ## Layout
 
