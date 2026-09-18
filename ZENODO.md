@@ -1,3 +1,5 @@
+# Zenodo deposit, version 0.3.1: PUBLISHED 2026-09-18 as 10.5281/zenodo.22821129 (12 files: tarball, SHA256SUMS, TARBALL.sha256, four LRAT sample packs, four SELECTED tables, LRAT_SAMPLE_SHA256SUMS)
+
 # Zenodo deposit, version 0.3: PUBLISHED 2026-09-17 22:06 UTC as 10.5281/zenodo.22820692 (record https://zenodo.org/records/22820692)
 
 The record was published while the files were still being uploaded, so it carries the release tarball, SHA256SUMS, TARBALL.sha256 and lrat_sample_p61k14.tar.zst only; the remaining proof samples and tables go into version 0.3.1 (same concept DOI). Metadata of 0.3 corrected after publication (title, version, description).

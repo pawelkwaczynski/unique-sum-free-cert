@@ -143,7 +143,7 @@ per-cube table of proof size, `lrat_sha256` and `cnf_sha256`.
 
 ## Cite
 
-Paweł Kwaczyński, unique-sum-free-cert: machine-checked certificates for m(p), p = 53 to 73 (v0.3), Zenodo, 2026, doi:10.5281/zenodo.22820692 (version DOI; concept DOI for all versions: 10.5281/zenodo.22067682). The v0.3 record holds the release tarball, the manifest and the p = 61 retained-proof sample; the samples for p = 67, 71, 73 follow in v0.3.1 under the same concept DOI. See CITATION.cff.
+Paweł Kwaczyński, unique-sum-free-cert: machine-checked certificates for m(p), p = 53 to 73 (v0.3), Zenodo, 2026, doi:10.5281/zenodo.22820692 (version DOI; concept DOI for all versions: 10.5281/zenodo.22067682). The v0.3 record holds the release tarball, the manifest and the p = 61 retained-proof sample; v0.3.1 (doi:10.5281/zenodo.22821129) carries the same tarball plus the complete retained-proof samples for p = 61, 67, 71, 73 with their per-cube tables. See CITATION.cff.
 
 ## Acknowledgement
 
