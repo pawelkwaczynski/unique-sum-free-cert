@@ -20,11 +20,21 @@ per class, and a certificate that the list is complete.
 | 41 | 13 | 69 | engine B; v1 count agrees (5,274) | certified, 741 position cubes |
 | 43 | 13 | 23 | engine B; v1 count agrees (1,794) | certified, 820 position cubes |
 | 47 | 13 | 2  | engine B; v1 count agrees (156) | certified, 990 position cubes |
-| 53 | 14 | 2  | engine B; v1 count agrees (182) | not certified: 1,227 cubes UNSAT, 48 timed out |
+| 53 | 14 | 2  | engine B; v1 count agrees (182) | certified, 1,275 position cubes (1,227 directly, 48 through their children) |
 | 59 | 15 | 12 | engine B list only | not certified |
 | 61 | 15 | 3  | engine B list only | not certified |
 | 67 | 16 | 24 | engine B list only | not certified |
 | 71 | 16 | 2  | engine B list only | not certified |
+
+The p = 53 certificate was finished on 2026-09-18. The 48 position cubes that had timed out in August
+were split into 2,084 children, each refuted with a CaDiCaL native LRAT proof checked by cake_lpr at
+generation time; a coverage audit over the ledger confirms that all 1,275 top-level cubes are closed,
+1,227 directly and 48 through a complete set of children. The run took 67 core-hours on LUMI-C
+(EuroHPC Development Access EHPC-DEV-2026D09-324). The ledger is in
+`certificates/certc_p53k14.jsonl.gz` (3,359 cube rows plus the summary line).
+Before that run the certifier was re-verified by recomputing p = 47 from scratch on the same machine:
+all 990 cubes came back UNSAT with byte-identical `cnf_sha256` and `lrat_sha256` to the original
+ledger produced on different hardware in August.
 
 Brute force stops at p = 31, SAT model enumeration was run for p = 11, 19, 23, 29, 31, 37
 (it times out at p = 41 and 43), and the whole-formula certificate covers 11 <= p <= 37.
