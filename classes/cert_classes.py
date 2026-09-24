@@ -10,12 +10,27 @@ Solver: cadical --lrat (binary), checker: cake_lpr. Emits one JSON line.
 Usage: cert_classes.py p k list.txt out.jsonl [time_limit_s]
 """
 import hashlib, json, os, subprocess, sys, tempfile, time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
-sys.path.insert(0, "/home/green27/green27_algo")
+# The repository root holds gen_cnf.py and cubes.py; nothing here depends on an absolute path.
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import gen_cnf
 
-CADICAL = "/home/green27/green27/tools/cadical/build/cadical"
-CAKE = "/home/green27/green27/tools/cake_lpr/cake_lpr"
+# Solver and checker are taken from the environment, falling back to the names on PATH.
+CADICAL = os.environ.get("CADICAL", "cadical")
+CAKE = os.environ.get("CAKE_LPR", "cake_lpr")
+
+
+def preflight():
+    """Fail before any solving if a tool is missing, rather than logging thousands of ERROR cubes."""
+    import shutil
+    missing = [n for n, p in (("cadical", CADICAL), ("cake_lpr", CAKE))
+               if not (os.path.isfile(p) and os.access(p, os.X_OK)) and shutil.which(p) is None]
+    if missing:
+        sys.stderr.write(
+            "missing tool(s): %s\n"
+            "Set CADICAL and CAKE_LPR to the binaries, or put them on PATH.\n" % ", ".join(missing))
+        sys.exit(2)
 
 
 def reps(path):
@@ -33,6 +48,7 @@ def normalized_images(A, p):
 
 
 def main():
+    preflight()
     p, k, lst, out = int(sys.argv[1]), int(sys.argv[2]), sys.argv[3], sys.argv[4]
     lim = int(sys.argv[5]) if len(sys.argv) > 5 else 0
     classes = reps(lst)

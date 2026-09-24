@@ -21,10 +21,11 @@ per class, and a certificate that the list is complete.
 | 43 | 13 | 23 | engine B; v1 count agrees (1,794) | certified, 820 position cubes |
 | 47 | 13 | 2  | engine B; v1 count agrees (156) | certified, 990 position cubes |
 | 53 | 14 | 2  | engine B; v1 count agrees (182) | certified, 1,275 position cubes (1,227 directly, 48 through their children) |
-| 59 | 15 | 12 | engine B list only | not certified |
+| 59 | 15 | 12 | engine B list only | certified, 1,596 position cubes (1,487 directly, 109 through their children) |
 | 61 | 15 | 3  | engine B list only | not certified |
 | 67 | 16 | 24 | engine B list only | not certified |
 | 71 | 16 | 2  | engine B list only | not certified |
+| 73 | 16 | 4  | engine B list only; the same engine reproduces the published count for p = 71 | not certified |
 
 The p = 53 certificate was finished on 2026-09-18. The 48 position cubes that had timed out in August
 were split into 2,084 children, each refuted with a CaDiCaL native LRAT proof checked by cake_lpr at
@@ -36,6 +37,22 @@ Before that run the certifier was re-verified by recomputing p = 47 from scratch
 all 990 cubes came back UNSAT with byte-identical `cnf_sha256` and `lrat_sha256` to the original
 ledger produced on different hardware in August.
 
+The p = 59 certificate was finished on 2026-09-24. It needed a change to the certifier, not more machine
+time: the earlier version split a timed-out cube into children only at the top level, so a cube whose own
+child also timed out stayed open for good. At p = 53 one level was enough and the flaw never showed; at
+p = 59 another 323 children timed out and 65 of the 1,596 top-level cubes stayed open. The certifier now
+splits at any depth, up to a cap of six, and works in rounds. The formula per cube is unchanged, so a cube
+computed by either version has the same `cnf_sha256`. The finishing run took 2 hours 7 minutes on one
+LUMI-C node; the ledger holds 25,172 cubes over four depths (1,596 + 5,026 + 14,878 + 3,672), of which
+24,666 carry their own checked proof and 506 are covered by a complete set of children. Cumulative cost
+for p = 59 is 447 core-hours, 390.5 of them in the solver and 56.8 in cake_lpr. The ledger is in
+`certificates/certc_p59k15.jsonl.gz`.
+
+Both class certificates were audited a second time from the shipped file rather than from the run, by a
+separate program that builds the covering upwards from the ledger rows instead of descending recursively.
+The audit was itself checked by deleting one load-bearing proof, a cube whose parent had timed out, and
+confirming that it then reports an open top-level cube.
+
 Brute force stops at p = 31, SAT model enumeration was run for p = 11, 19, 23, 29, 31, 37
 (it times out at p = 41 and 43), and the whole-formula certificate covers 11 <= p <= 37.
 Engine v1 shares the author and the search idea with engine B, so agreement of its count is
@@ -43,7 +60,7 @@ a consistency check, not an independent method. The certificate is what makes a 
 complete; where the last column says "not certified", the count is the output of one
 program.
 
-Sequence: 1, 1, 1, 4, 1, 1, 9, 35, 30, 5, 13, 69, 23, 2, 2, 12, 3, 24, 2 for p = 3 to 71,
+Sequence: 1, 1, 1, 4, 1, 1, 9, 35, 30, 5, 13, 69, 23, 2, 2, 12, 3, 24, 2, 4 for p = 3 to 73,
 [OEIS A399437](https://oeis.org/A399437) (approved 2026-09-06).
 
 ## Methods
@@ -69,5 +86,24 @@ Sequence: 1, 1, 1, 4, 1, 1, 9, 35, 30, 5, 13, 69, 23, 2, 2, 12, 3, 24, 2 for p =
 
 The blocking clauses use the same variable convention as `gen_cnf.py` (membership of i on
 variable i + 1) and the encoder without the reflection breaker, so the certificate does not
-depend on the breaker. Paths in the scripts follow the cloud worker layout
-(`/home/green27/...`); adjust `sys.path` and the tool paths to run elsewhere.
+depend on the breaker. Both scripts import `gen_cnf` and `cubes` from the repository root
+relative to their own location, and take the solver and the checker from the environment:
+
+    CADICAL=/path/to/cadical CAKE_LPR=/path/to/cake_lpr \
+      python3 cert_classes_cubes.py 59 15 list_p59k15.txt out.jsonl 900 128 6
+
+Both names default to `cadical` and `cake_lpr` on PATH, and a missing tool stops the run at
+once instead of filling the ledger with ERROR rows. Until 2026-09-24 the two scripts carried
+absolute paths from the cloud worker that produced the early ledgers, and imported a module
+that was never part of this repository, so neither could run from a fresh clone.
+
+Re-checking a shipped ledger needs no solver, because every cube in it is already decided.
+The tools are looked up only once a round actually has work, so this runs on a bare machine:
+
+    gunzip -c certificates/certc_p59k15.jsonl.gz > p59.jsonl
+    python3 cert_classes_cubes.py 59 15 list_p59k15.txt p59.jsonl 900 1 6
+
+It recomputes `closed` and `open` from the rows and appends the summary line to `p59.jsonl`,
+which is why it wants a real file and not a pipe. Lowering the last argument is a check on the
+check: `6` gives `LIST-COMPLETE-CERTIFIED`, while `3` refuses the same ledger with 65 open
+cubes, because it then ignores the splits below depth three.
