@@ -22,7 +22,7 @@ per class, and a certificate that the list is complete.
 | 47 | 13 | 2  | engine B; v1 count agrees (156) | certified, 990 position cubes |
 | 53 | 14 | 2  | engine B; v1 count agrees (182) | certified, 1,275 position cubes (1,227 directly, 48 through their children) |
 | 59 | 15 | 12 | engine B list only | certified, 1,596 position cubes (1,487 directly, 109 through their children) |
-| 61 | 15 | 3  | engine B list only | not certified |
+| 61 | 15 | 3  | engine B list only | certified, 1,711 position cubes (1,587 directly, 124 through their children) |
 | 67 | 16 | 24 | engine B list only | not certified |
 | 71 | 16 | 2  | engine B list only | not certified |
 | 73 | 16 | 4  | engine B list only; the same engine reproduces the published count for p = 71 | not certified |
@@ -48,7 +48,13 @@ LUMI-C node; the ledger holds 25,172 cubes over four depths (1,596 + 5,026 + 14,
 for p = 59 is 447 core-hours, 390.5 of them in the solver and 56.8 in cake_lpr. The ledger is in
 `certificates/certc_p59k15.jsonl.gz`.
 
-Both class certificates were audited a second time from the shipped file rather than from the run, by a
+The p = 61 certificate was finished on 2026-09-24, in one 5 hour 9 minute run on one LUMI-C node using the
+same certifier, over five rounds. The ledger holds 33,982 cubes over four depths (1,711 + 5,885 + 19,039 +
+7,347), of which 33,311 carry their own checked proof and 671 are covered by a complete set of children.
+Cost for p = 61 is 606 core-hours, 524.4 of them in the solver and 81.7 in cake_lpr. The ledger is in
+`certificates/certc_p61k15.jsonl.gz`.
+
+All three class certificates were audited a second time from the shipped file rather than from the run, by a
 separate program that builds the covering upwards from the ledger rows instead of descending recursively.
 The audit was itself checked by deleting one load-bearing proof, a cube whose parent had timed out, and
 confirming that it then reports an open top-level cube.
