@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use these certificates or witnesses, please cite them as below."
-title: "unique-sum-free-cert: machine-checked certificates for m(p), p = 53 to 73 (OEIS A398173)"
+title: "unique-sum-free-cert: machine-checked certificates for m(p), p = 53 to 79 (OEIS A398173)"
 authors:
   - family-names: Kwaczyński
     given-names: Paweł
@@ -23,6 +23,9 @@ identifiers:
   - type: doi
     value: "10.5281/zenodo.22821129"
     description: "version 0.3.1 (same tarball plus the complete retained-proof samples for p = 61, 67, 71, 73)"
+  - type: doi
+    value: "10.5281/zenodo.23327304"
+    description: "version 0.4 (p = 79 added; release tarball, manifest, the p = 79, k = 16 ledger, the proof samples of 0.3.1)"
 repository-code: "https://github.com/pawelkwaczynski/unique-sum-free-cert"
-date-released: 2026-09-17
-version: 0.3.0
+date-released: 2026-10-13
+version: 0.4.0

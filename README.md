@@ -3,8 +3,8 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22067682.svg)](https://doi.org/10.5281/zenodo.22067682) [![verify](https://github.com/pawelkwaczynski/unique-sum-free-cert/actions/workflows/verify.yml/badge.svg)](https://github.com/pawelkwaczynski/unique-sum-free-cert/actions/workflows/verify.yml)
 
 Machine-checked certificates for the exact values of m(p), the smallest size
-of a unique-sum-free subset of Z/pZ, for the primes p = 53, 59, 61, 67, 71, 73.
-These are the terms a(15) through a(20) of [OEIS A398173](https://oeis.org/A398173)
+of a unique-sum-free subset of Z/pZ, for the primes p = 53, 59, 61, 67, 71, 73, 79.
+These are the terms a(15) through a(21) of [OEIS A398173](https://oeis.org/A398173)
 and the small cases of Problem 27 in Ben Green's
 [100 open problems](https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf).
 
@@ -32,6 +32,7 @@ details in `encoding-tests/README.md`). Those files are kept under
 | 67 | 16 | `witnesses/` | every k = 2..15 refuted, each rung audited (`ledgers/p67/`) | solver-certified, hash-bound |
 | 71 | 16 | `witnesses/` | every k = 2..15 refuted, each rung audited (`ledgers/p71/`) | solver-certified, hash-bound |
 | 73 | 16 | `witnesses/` | every k = 2..15 refuted, each rung audited (`ledgers/p73/`) | solver-certified, hash-bound |
+| 79 | 17 | `witnesses/` | every k = 2..16 refuted, each rung audited (`ledgers/p79/`) | solver-certified, hash-bound |
 
 Every rung of every prime is at the same tier: each cube's proof was checked
 by cake_lpr when it was produced, the proof's hash and the hash of the exact
@@ -41,9 +42,12 @@ and the row says which: kissat DRAT checked by drat-trim and cake_lpr (the
 early rows), or CaDiCaL native LRAT checked by cake_lpr (most rows from
 2026-08-27 on). p = 61, 67, 71, 73 were finished on the EuroHPC supercomputer
 LUMI-C (September 2026); see `ledgers/p<p>/README.md` for the per-rung
-numbers and the machines. The two largest ledgers, p = 71 and p = 73 at
-k = 15, are stored gzip-compressed (`certified.jsonl.gz`); every tool here
-reads both forms.
+numbers and the machines. p = 79 was computed on LUMI-C from September to
+October 2026. The large ledgers (k = 15 of p = 71, 73, 79) are stored
+gzip-compressed (`certified.jsonl.gz`); every tool here reads both forms.
+The k = 16 ledger of p = 79 (2,468,318 rows, 320 MB compressed) is over the
+GitHub file limit and lives in the Zenodo record; `fetch_external.sh`
+downloads it and refuses it unless its sha256 matches `EXTERNAL_LEDGER`.
 
 ## Prior work, exactly
 
@@ -70,7 +74,8 @@ reads both forms.
   [arXiv:2303.15134](https://arxiv.org/abs/2303.15134): the theory.
 - The values m(61), m(67), m(71), m(73) were first computed here (OEIS
   A398173, August 2026) and are certified here since v0.3 (September 2026).
-  m(53) and m(59) were proved minimal independently here and by Watson in
+  m(79) = 17 was computed and certified here in v0.4 (October 2026).
+  m(53) and m(59) were certified minimal independently here and by Watson in
   August 2026.
 
 ## Verification tiers
@@ -86,7 +91,7 @@ unique-sums-notes, so a claim means the same thing in both tables.
   cake_lpr; the ledger row says which); the proof was then deleted and only
   its sha256, together with the sha256 of the exact CNF, is kept in the ledger. The coverage auditor rebuilds each CNF from `gen_cnf.py`
   plus the cube's unit clauses and refuses any row whose hash does not match.
-  Every rung of p = 53, 59, 61, 67, 71, 73 is at this tier.
+  Every rung of p = 53, 59, 61, 67, 71, 73, 79 is at this tier.
 - **search only**: two independent programs agree, witness checked. No proof
   object. No value in this repository is at this tier since v0.3.
 
@@ -103,6 +108,7 @@ checkers themselves, and the coverage argument in `audit_coverage.py`.
 
 ```
 python3 witnesses/check_witness.py                      # upper bounds, no tools needed
+./fetch_external.sh                                     # only for p = 79, k = 16 (from Zenodo)
 python3 audit_coverage.py 53 13 ledgers/p53/k13/certified.jsonl   # coverage + hash binding
 python3 gen_cnf.py 53 13 > p53k13.cnf                   # the formula itself
 ```
@@ -143,15 +149,16 @@ per-cube table of proof size, `lrat_sha256` and `cnf_sha256`.
 
 ## Cite
 
-Paweł Kwaczyński, unique-sum-free-cert: machine-checked certificates for m(p), p = 53 to 73 (v0.3), Zenodo, 2026, doi:10.5281/zenodo.22820692 (version DOI; concept DOI for all versions: 10.5281/zenodo.22067682). The v0.3 record holds the release tarball, the manifest and the p = 61 retained-proof sample; v0.3.1 (doi:10.5281/zenodo.22821129) carries the same tarball plus the complete retained-proof samples for p = 61, 67, 71, 73 with their per-cube tables. See CITATION.cff.
+Paweł Kwaczyński, unique-sum-free-cert: machine-checked certificates for m(p), p = 53 to 79 (v0.4), Zenodo, 2026, doi:10.5281/zenodo.23327304 (version DOI; concept DOI for all versions: 10.5281/zenodo.22067682). The v0.4 record holds the release tarball, the manifest, the k = 16 ledger of p = 79, and the retained-proof samples for p = 61, 67, 71, 73 carried over from v0.3.1 (doi:10.5281/zenodo.22821129). v0.3 is doi:10.5281/zenodo.22820692. See CITATION.cff.
 
 ## Acknowledgement
 
 We acknowledge EuroHPC Joint Undertaking for awarding us access to LUMI at
 CSC, Finland (Development Access project EHPC-DEV-2026D09-324). The rungs
 k = 2..13 of p = 61 and p = 71, k = 2..14 of p = 67 and p = 73, and the last
-four split rounds of p = 71 and p = 73 at k = 15 were computed there; the
-remaining rungs ran on cloud workers (Google Cloud e2-standard-8).
+four split rounds of p = 71 and p = 73 at k = 15, and every rung of p = 79
+were computed there; the remaining rungs ran on cloud workers (Google Cloud
+e2-standard-8).
 
 ## License
 

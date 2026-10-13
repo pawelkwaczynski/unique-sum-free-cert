@@ -1,3 +1,18 @@
+# Zenodo deposit, version 0.4 (2026-10-13)
+
+Version DOI 10.5281/zenodo.23327304 (reserved on the draft; record https://zenodo.org/records/23327304), concept DOI 10.5281/zenodo.22067682. Made with "New version" on the 0.3.1 record; the four retained-proof samples and their tables are carried over unchanged.
+
+Title: unique-sum-free-cert: machine-checked certificates for m(p), p = 53 to 79 (v0.4)
+Upload type: dataset
+Creators: Kwaczyński, Paweł (ORCID 0009-0004-0627-3621), Łódź, Poland
+License: CC BY 4.0 (data); code MIT in the repository
+Keywords: as in 0.3
+Related identifiers: as in 0.3
+Description (short): as in 0.3, for the seven primes p = 53, 59, 61, 67, 71, 73, 79 (OEIS A398173, a(15) to a(21)). New in 0.4: the complete ladder for p = 79 (k = 2..16, m(79) = 17), computed on the EuroHPC supercomputer LUMI-C (Development Access EHPC-DEV-2026D09-324) from September to October 2026, with cover certificates for every rung and the witness of size 17. The k = 16 ledger (2,468,318 rows) is over the GitHub file limit, so it is deposited here as certified_p79k16.jsonl.gz and not in the tarball; the repository fetches it with fetch_external.sh and checks its sha256.
+Files: release tarball of the tagged repository (tag v0.4), SHA256SUMS, TARBALL.sha256, certified_p79k16.jsonl.gz; carried over from 0.3.1: lrat_sample_p61k14.tar.zst, lrat_sample_p67k15.tar.zst, lrat_sample_p71k15.tar.zst, lrat_sample_p73k15.tar.zst, the four *_SELECTED.tsv tables and LRAT_SAMPLE_SHA256SUMS.
+Acknowledgement (required by the EuroHPC Development Access terms): We acknowledge EuroHPC Joint Undertaking for awarding us access to LUMI at CSC, Finland.
+Version: 0.4 (2026-10-13).
+
 # Zenodo deposit, version 0.3.1: PUBLISHED 2026-09-18 as 10.5281/zenodo.22821129 (12 files: tarball, SHA256SUMS, TARBALL.sha256, four LRAT sample packs, four SELECTED tables, LRAT_SAMPLE_SHA256SUMS)
 
 # Zenodo deposit, version 0.3: PUBLISHED 2026-09-17 22:06 UTC as 10.5281/zenodo.22820692 (record https://zenodo.org/records/22820692)
