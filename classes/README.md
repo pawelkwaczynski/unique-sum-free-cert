@@ -23,7 +23,7 @@ per class, and a certificate that the list is complete.
 | 53 | 14 | 2  | engine B; v1 count agrees (182) | certified, 1,275 position cubes (1,227 directly, 48 through their children) |
 | 59 | 15 | 12 | engine B list only | certified, 1,596 position cubes (1,487 directly, 109 through their children) |
 | 61 | 15 | 3  | engine B list only | certified, 1,711 position cubes (1,587 directly, 124 through their children) |
-| 67 | 16 | 24 | engine B list only | not certified |
+| 67 | 16 | 24 | engine B list only | certified, 2,080 position cubes (1,860 directly, 220 through their children) |
 | 71 | 16 | 2  | engine B list only | not certified |
 | 73 | 16 | 4  | engine B list only; the same engine reproduces the published count for p = 71 | not certified |
 
@@ -54,7 +54,15 @@ same certifier, over five rounds. The ledger holds 33,982 cubes over four depths
 Cost for p = 61 is 606 core-hours, 524.4 of them in the solver and 81.7 in cake_lpr. The ledger is in
 `certificates/certc_p61k15.jsonl.gz`.
 
-All three class certificates were audited a second time from the shipped file rather than from the run, by a
+The p = 67 certificate was finished on 2026-10-15, with the same certifier, in a chain of five 12-hour jobs on one
+LUMI-C node (the first four ran into the wall-clock limit and were resumed from the ledger, the fifth finished after
+5 hours 29 minutes). The ledger holds 378,591 cubes over five depths (2,080 + 10,994 + 65,385 + 193,054 + 107,078),
+of which 371,021 carry their own checked proof and 7,570 are covered by a complete set of children; of the 2,080
+position cubes, 1,860 are refuted directly and 220 through their children. Cost for p = 67 is 6,703 core-hours in
+the ledger, 5,802 of them in the solver and 901 in cake_lpr (6,849 core-hours of allocated node time). The ledger is
+in `certificates/certc_p67k16.jsonl.gz`.
+
+All four cube-and-conquer class certificates were audited a second time from the shipped file rather than from the run, by a
 separate program that builds the covering upwards from the ledger rows instead of descending recursively.
 The audit was itself checked by deleting one load-bearing proof, a cube whose parent had timed out, and
 confirming that it then reports an open top-level cube.
