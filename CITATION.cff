@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use these certificates or witnesses, please cite them as below."
+message: "If you use these certificates or witnesses, please cite them as below, with the version DOI of the release that carries the value you use; VERSION_POLICY.md maps each published number to its tag, encoder hash and DOI."
 title: "unique-sum-free-cert: machine-checked certificates for m(p), p = 53 to 79 (OEIS A398173)"
 authors:
   - family-names: Kwaczyński

@@ -1,4 +1,6 @@
-# Zenodo deposit, version 0.4 (2026-10-13)
+# Zenodo deposit, version 0.4: PUBLISHED 2026-10-13 18:12 UTC as 10.5281/zenodo.23327304 (record https://zenodo.org/records/23327304)
+
+# Zenodo deposit, version 0.4, metadata as prepared (2026-10-13)
 
 Version DOI 10.5281/zenodo.23327304 (reserved on the draft; record https://zenodo.org/records/23327304), concept DOI 10.5281/zenodo.22067682. Made with "New version" on the 0.3.1 record; the four retained-proof samples and their tables are carried over unchanged.
 

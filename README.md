@@ -99,6 +99,29 @@ Trusted surfaces that nothing here certifies: that `gen_cnf.py` encodes the
 definition faithfully (see `encoding-tests/` for what has been tested), the
 checkers themselves, and the coverage argument in `audit_coverage.py`.
 
+## What each checker checks, and what it does not
+
+| Artefact | Checks | Does not check |
+|---|---|---|
+| `cake_lpr` (formally verified LRAT checker) | that the LRAT proof refutes exactly the CNF file it is given | that the CNF means anything: the encoding, the cube partition, which cube the proof belongs to |
+| `drat-trim` | for rows produced through the DRAT chain, replays the DRAT refutation and emits the LRAT that cake_lpr then checks; native-LRAT rows (CaDiCaL) bypass this step, and the auditor checks the recorded chain fields, not the solver's identity | the same as above; drat-trim is not itself verified, which is why cake_lpr follows it |
+| `audit_coverage.py` | for every row it accepts as a refutation: the full field set and VERIFIED statuses, that p and k match, and that the row's `cnf_sha256` equals the hash of the CNF rebuilt from `gen_cnf.py` plus the cube's units; that the accepted cubes cover the base partition directly or through complete child sets (TIMEOUT, ERROR and unused rows establish nothing); any SAT row is checked directly against the definition and fails the audit if its witness is bad | the proofs themselves (deleted after checking, only hashes remain), the checker binaries, and whether `gen_cnf.py` encodes the definition |
+| `cover_cert.py`, `check_cover.py` | `cover_cert.py` builds the cardinality-only formula "0, 1 in A, \|A\| = k, no cube" and records its checked refutation at generation time; `check_cover.py` later checks that the cover rows the coverage audit relies on carry PASS and VERIFIED and that their hashes match the formula rebuilt from the cubes actually used (it does not replay the proof; read it together with a passing coverage audit) | anything about an individual cube's refutation |
+| `witnesses/check_witness.py` | that each listed set has no residue with exactly one unordered representation, computed from the definition with no SAT involved; it prints the set's size, which gives the upper bound when read against the claimed m(p) | lower bounds; that the printed size equals the value claimed elsewhere |
+| `encoding-tests/` | agreement with an independently written encoder on 68 whole instances for p in {7, 11, 13, 17, 19, 23, 29, 31} and on 300 replayed p = 53, k = 13 cubes, and two properties: the whole group is accepted at k = p, and the breaker never changes a verdict (p <= 23) | faithfulness of the encoding at p >= 53; this layer is tested, not proved |
+| CI (`.github/workflows/verify.yml`) | on every push and pull request: the witness check, the hash-cache self-test, the external ledger fetched and compared by sha256, the coverage audit and the cover check on every ledger, the negative controls, two fields of each exported summary (`cubes_recorded`, `base_cnf_sha256`), and the encoder property tests at small p | nothing beyond the scripts above; it does not replay the deleted proofs, and a defect shared by the encoder and its tests would pass |
+| `SHA256SUMS`, the manifest, Zenodo checksums | that the bytes you downloaded match the values recorded at release (the manifest is computed by `make_manifest.sh`, the external ledger's hash is pinned in `fetch_external.sh`) | their content, and what was released beyond what the pinned values say |
+| the independent certification in unique-sums-notes | that a second pipeline, with its own encoder and retained LRAT, reports the same lower bounds for p = 53 and p = 59; this repository cites that claim and does not replay those proofs | the primes 61 to 79 |
+
+The layer none of these reaches is statement fidelity: that the production CNF
+asks the question in the definition. Nothing here proves it. It rests on reading
+`gen_cnf.py`, on the finite tests in `encoding-tests/`, and on the hand
+arguments for the normalization (0 and 1 in A), the sumset bound and the
+reflection breaker. The Lean theorem in unique-sums-notes is about an
+independent reference encoder; the production encoders on both sides are tested
+against it, not proved equivalent to it. `VERSION_POLICY.md` says which encoder
+hash stands behind each published number.
+
 ## Claims and threats
 
 `VERIFICATION_MAP.md` lists every claim with its tier and status history;
@@ -146,6 +169,8 @@ per-cube table of proof size, `lrat_sha256` and `cnf_sha256`.
 - `witnesses/`: the witness sets and a definition-level checker.
 - `encoding-tests/`: differential test against an independent encoder
   (Watson's pinned encoder is vendored there, MIT, with permission).
+- `VERSION_POLICY.md`: which release, encoder hash and DOI stand behind each
+  published number, and what was superseded.
 
 ## Cite
 
