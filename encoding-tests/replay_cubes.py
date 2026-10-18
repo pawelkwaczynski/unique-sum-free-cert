@@ -1,7 +1,7 @@
 """Replay a random sample of our p53 k=13 cubes on Watson's pinned encoder.
 Both encoders put membership of i on variable i+1, so our unit clauses apply
 literally. Expect UNSAT for every cube (all are certified UNSAT on ours)."""
-import json, random, subprocess, sys, time
+import json, os, random, subprocess, sys, time
 OTHER = os.path.join(os.path.dirname(os.path.abspath(__file__)), "usf_encode_pinned.py")
 LEDGER = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "ledgers", "p53", "k13", "certified.jsonl")
 N = int(sys.argv[1]); seed = int(sys.argv[2]); out = sys.argv[3]
