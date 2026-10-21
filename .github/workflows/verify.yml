@@ -60,3 +60,5 @@ jobs:
           echo "/tmp/kissat/build" >> $GITHUB_PATH
       - name: property tests (whole group at k = p, breaker soundness)
         run: PATH=/tmp/kissat/build:$PATH python3 encoding-tests/property_tests.py
+      - name: brute force against the definition (p <= 23, every k)
+        run: PATH=/tmp/kissat/build:$PATH python3 encoding-tests/bruteforce_test.py

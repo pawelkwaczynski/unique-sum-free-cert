@@ -45,3 +45,28 @@ of that over-constrained formula; they are being re-issued against the fixed
 encoder, with new base and per-cube hashes. The values were never in doubt
 (independent search engine, independent encoder, per-cube replay), the
 proof objects were.
+
+## Brute force against the definition
+
+`bruteforce_test.py` lists every k-subset of Z/pZ for p in {2, 3, 5, 7, 11,
+13, 17, 19, 23} and every k from 1 to p, and decides from the definition alone
+(unordered pairs, a + a allowed) whether the subset has a unique sum. That
+search never imports `gen_cnf.py` and calls no solver. Only afterwards does
+the script build the production CNF for the same (p, k), solve it with kissat
+and require that it is satisfiable exactly when such a set exists. The search
+also checks that keeping only the sets that contain 0 and 1, and then only the
+reflection-canonical ones, never changes whether a set exists. For p <= 11 it
+also enumerates the distinct membership assignments of the CNF and requires
+their number to equal the number of normalized, reflection-reduced sets.
+
+A negative control checks that the comparison can fail: at p = 5, k = 2, with
+the sumset bound switched off (it rejects k = 2 on its own and would hide the
+damage), the script deletes the 15 clauses that forbid a residue with exactly
+one representation. The intact formula is UNSAT, the damaged one is SAT, and
+the search finds no set, so the mismatch is reported.
+
+Result (2026-10-21, kissat 4.0.4): 100 of 100 (p, k) cases agree, 28 of 28
+model counts at p <= 11 agree, and the smallest k with a set is 3, 4, 5, 7,
+7, 8, 9, 10 for p = 3, 5, 7, 11, 13, 17, 19, 23, the first terms of A398173.
+See `bruteforce_results.json`. Like the tests above, this is evidence at small
+p only: it says nothing directly about p = 79.

@@ -21,6 +21,7 @@ One row per claim the README makes, with the file that carries it and the tier i
 | Values m(53), m(59) tabulated earlier without proof | external | Scheinerman 2019, Table 3.1 | cited |
 | Encoder agrees with an independent encoder | tested (p <= 31; 300 cubes) | `encoding-tests/` | 2026-08-22 |
 | Whole group accepted at k = p; breaker never changes a verdict | tested (p <= 23) | `encoding-tests/property_tests.py`, CI | 2026-08-23 |
+| Encoder agrees with a brute-force search from the definition | tested (p <= 23, every k; model counts at p <= 11) | `encoding-tests/bruteforce_test.py`, CI | 2026-10-21 |
 | Cube partition is complete | checked certificate | `cover.jsonl` per rung, `check_cover.py` | 2026-08-23 |
 | Normalization 0, 1 in A is sound | hand proof | README, paper | |
 
