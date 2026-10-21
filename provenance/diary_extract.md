@@ -1,0 +1,54 @@
+# Dated extract: m(p) and affine class certificates
+
+The terms a(15) through a(21) refer to OEIS A398173. Certificate tiers and release attribution follow the public repository. Each item records a diary event, including results later corrected.
+
+- 2026-08-04: a(15) = m(53) = 14, submitted to OEIS on 29 July, was published. It came from a cube search run by hand: 22,152 cubes, 26 minutes on 6 cores. This was a value, not yet a checked certificate.
+- 2026-08-07: The unique-sum-free condition was encoded as SAT with pair variables, cardinality clauses and the normalization 0, 1 in A. The initial test matched 16/16 known values.
+- 2026-08-07: A sumset bound and reflection breaker cut a p = 37 UNSAT run from 104 to 35 seconds, but p = 41 only from 608 to 394 seconds.
+- 2026-08-07: Position cubes reduced p = 43 wall time from 981 to 99 seconds with 6 workers; CPU time was 449 seconds.
+- 2026-08-07: The first SAT partition refuted p = 53, k = 13 in 51/51 cubes, using 3,140 wall seconds and 15,046 CPU seconds. The earlier 26-minute brute-force run was faster.
+- 2026-08-07: Two simulated-annealing variants failed the p = 53 validation and stalled at cost 1 to 2. I stopped that witness search.
+- 2026-08-07: The first search engine found a p = 59, k = 15 witness in 10 seconds and refuted k = 14 in 4,111 seconds and 9,792,403,711 nodes; k = 2 through 12 were also refuted. I recorded m(59) = 15, then a search result without a certificate.
+- 2026-08-08: An orbit-canonical search reduced p = 53, k = 13 from 290 to 11.4 seconds and p = 59, k = 14 from 4,111 to 127 seconds in the recorded comparison.
+- 2026-08-08: I found a p = 61 witness of size 15, refuted k = 14 in 145 seconds and 311 million nodes, and recorded m(61) = 15 after the smaller rungs were searched.
+- 2026-08-08: A cube scheduling predictor had R² = 0.935, but its estimated maximum scheduling gain was 13.9%, below my 15% adoption threshold. I set it aside.
+- 2026-08-08: I recorded m(67) = 16 from a k = 15 search of 3,212,613,302 nodes in 2,677 seconds and a size-16 witness.
+- 2026-08-08: I recorded m(71) = 16 from a full k = 2 through 15 search and a size-16 witness; k = 15 took 4,052,707,293 nodes and 5,078 seconds.
+- 2026-08-08: I recorded m(73) = 16 from a full search below 16 and a checked witness. Two k = 15 runs each used 4,574,711,727 nodes.
+- 2026-08-09: The DRAT pipeline ran kissat, drat-trim and cake_lpr, then kept CNF and proof hashes after a checked refutation. A duplicate-literal bug caused about 1 in 11 cubes to fail checking; deduplicating the CNF serialization made 11/11 pass.
+- 2026-08-09: The first p = 53, k = 13 certificate attempt checked 1,275/1,275 cubes, with 2.2 solver CPU hours and 4.3 checker CPU hours. I later withdrew this issue because its symmetry breaker excluded cases.
+- 2026-08-10: The p = 67, k = 15 run had 2,080/2,080 parent cubes, 1,952 checked refutations and 128 timeouts awaiting children.
+- 2026-08-10: I fixed a resume bug: a zero-work parent pass returned success and skipped timeout splitting. The audit had correctly reported the uncovered cubes.
+- 2026-08-10: I estimated about 430, 900 and 1,080 CPU hours for p = 67, 71 and 73, about 2,400 hours in total. These were forecasts from a partial run, not final costs.
+- 2026-08-10: Among 4,560 cube proofs, 513 above 100 MB consumed 96% of checker time; the measured rate was about 0.64 seconds per MB.
+- 2026-08-11: A positive encoder test first rejected 5 of 6 known witnesses because it fixed noncanonical representatives under the reflection breaker. With that breaker off, all 6 were accepted; the corrected existential test found witnesses for p = 53, 59, 61 and 67, while p = 71 and 73 timed out at 600 seconds.
+- 2026-08-12: I rejected a 150 to 350 CPU-hour forecast for p = 67 and 500 to 1,000 CPU hours for p = 67, 71 and 73. Measured p = 67, k = 15 work had already used 168 CPU hours; the revised estimate was 430 to 600 for p = 67 and about 2,400 total.
+- 2026-08-12: Splitting on a proof-size threshold lost its proposed CPU advantage: on 126 p = 53 cubes, cost rose from 6.3 to 133.4 CPU hours, about 21 times. I retained the threshold for memory control and resumability.
+- 2026-08-18: An out-of-memory failure in drat-trim left purportedly solved cubes without checked proofs. I removed those rows and recomputed them.
+- 2026-08-23: I found a wrong sign in the lex-leader chain. The old p = 53 ledgers certified an overrestricted formula; I superseded them and recomputed k = 2 through 13 with the fixed encoder.
+- 2026-08-23: I corrected a claim that SAT cubes were orbit-canonical. They were position cubes.
+- 2026-08-23: Release v0.1 carried the corrected p = 53 ladder and cube-cover certificates; the version DOI is 10.5281/zenodo.22067683. The status is solver-certified, hash-bound because most proof files were deleted after checking.
+- 2026-08-24: Fixed shards made split children disappear from the assigned work. I replaced the partitioning scheme with shuffled work order.
+- 2026-08-27: A native LRAT pilot compared 3 cubes through 3 checking paths and led to direct cake_lpr checking for subsequent CaDiCaL rows.
+- 2026-08-27: A sibling-proof reuse test succeeded on 0/6 cubes. The proof closure depended on every unit of the original cube.
+- 2026-08-27: The first affine class-list completeness certificates covered the smaller primes. In the public version map, v0.2 certifies lists through p = 47.
+- 2026-09-08: Release v0.2 added the p = 59 ladder, k = 2 through 14, and class-list certificates through p = 47. It was a tag only, first deposited with v0.3.
+- 2026-09-17: I closed p = 73, k = 15 after 4 split rounds, then p = 71, k = 15. These filled the two remaining top-rung gaps.
+- 2026-09-17: The four lower ladders were completed; the v0.3 import checked 52/52 rungs. New ladders held 1,171,344 ledger rows and recorded 13,939 solver CPU hours including timeouts.
+- 2026-09-17: The retained LRAT sample contained 404 checked proofs from the top rungs of p = 61, 67, 71 and 73. One proof was replayed again against its reconstructed CNF.
+- 2026-09-18: I found that the class search for p = 73, which had finished on 17 September, returned 4 affine classes. The list passed a separate check from the definition, but completeness was still search only.
+- 2026-09-18: v0.3 was released for p = 61, 67, 71 and 73. Its deposit was published before all sample files arrived; the completed sample set was deposited as 0.3.1, DOI 10.5281/zenodo.22821129.
+- 2026-09-18: The p = 53 list of 2 affine classes was certified; the certificate closed 1,275/1,275 position cubes, 1,227 directly and 48 by all 2,084 children. The finishing run used 67 core hours.
+- 2026-09-18: I measured a broad forecast of 23,000 to 502,000 core hours for class-list certificates at p = 59 through 73. It was an extrapolation, not a final cost.
+- 2026-09-20: The p = 79 ladder through k = 15 closed with 577,215 ledger rows. It established m(79) at least 16, without an exact value.
+- 2026-09-24: A repeat run found 2 affine classes for p = 71, matching the earlier class count. Neither p = 71 nor p = 73 had a completeness certificate.
+- 2026-09-24: The first p = 59 class-list run left 65 of 1,596 top cubes open, including 323 timed-out children that the old certifier could not split further.
+- 2026-09-24: The repaired recursive certifier certified 12 affine classes and closed 1,596/1,596 p = 59 top cubes. The ledger had 25,172 cubes, 24,666 direct checked refutations and 506 covered timeouts; cumulative cost was 447 core hours.
+- 2026-09-24: The p = 61 list of 3 affine classes was certified; the public repository records 33,982 cubes and 606 core hours.
+- 2026-09-25: A size-17 witness and exhaustive search suggested m(79) = 17, but k = 16 still lacked a checked certificate. I recorded the public claim as the certified lower bound 16 and a checked upper bound 17.
+- 2026-10-08: I retracted a diagnosis of divergence based on ledger growth from 100,000 to 132,000 rows per iteration. The relevant queue had fallen from 625,702 at iteration 12 to 265,834 at iteration 22. The run limit was raised to 30 iterations.
+- 2026-10-09: The p = 79, k = 16 coverage audit passed at iteration 24. It covered 2,926 base cubes, 2,582 directly and 344 through children, with 0 gaps and 2,468,318 ledger rows. The diary recorded this result on October 12.
+- 2026-10-12: With the k = 16 lower bound and a checked size-17 witness, I recorded m(79) = 17, A398173 a(21).
+- 2026-10-13: v0.4 added p = 79, k = 2 through 16; its large k = 16 ledger was placed in the versioned deposit. The public version map also assigns the p = 53, 59 and 61 class-list certificates to v0.4.
+- 2026-10-15: The p = 67 class list of 24 classes was certified. Of 2,080 top cubes, 1,860 closed directly and 220 through children; 378,591 cube rows yielded 6,703.1 core hours of solver and checker work. This certificate came after v0.4.
+- 2026-10-18: I corrected overstatements about what the auditors, witness checker and CI verify. I also corrected the release attribution of the p = 59 and 61 class certificates and the published status of v0.4.
